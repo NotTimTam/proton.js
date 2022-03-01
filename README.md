@@ -1,34 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nextjs-simple-components
 
-## Getting Started
+A small, easy-to-learn UI library for Next.js/React.js
 
-First, run the development server:
+NSC is not a full UI library, instead it is a collection of highly modifiable components for you to drop into existing projects.
 
-```bash
-npm run dev
-# or
-yarn dev
+Works well with these libraries:
+
+[`react-icons`](https://react-icons.github.io/react-icons/)
+[`bootstrap-icons`](https://icons.getbootstrap.com/)
+
+---
+
+# Documentation
+
+## Importing
+
+All components can be imported with:
+
+```jsx
+import { ComponentName } from "nextjs-simple-components";
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Applying Modifications
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can apply style/state changes to each component either through attributes. Example:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```jsx
+return <Component icon emphasis="primary" />;
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Style modifications that use booleans are defaulted to true when they exist on components.
 
-## Learn More
+```jsx
+return <>
+	<! -- Effectively the same. -- >
+	<Component icon />
+	<Component icon={true}>
+</>;
+```
 
-To learn more about Next.js, take a look at the following resources:
+Any other attributes added to the component will be accepted like normal by React.js/Next.js. (_i.e._ `className`, `style`, `key`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## <a name="colors">Colors</a>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can apply colors to most of the components with a `color` attribute.
 
-## Deploy on Vercel
+```jsx
+return <Component color="red" />;
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Here is a list of the available colors. You can always modify the colors in the styles folder to suite your needs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Name      | Value                                                                                                             |
+| --------- | ----------------------------------------------------------------------------------------------------------------- |
+| `red`     | <span style="color: #ed5564; font-weight: 800; font-family: monospace; text-transform: uppercase;">#ed5564</span> |
+| `orange`  | <span style="color: #f1b037; font-weight: 800; font-family: monospace; text-transform: uppercase;">#f1b037</span> |
+| `yellow`  | <span style="color: #ffce54; font-weight: 800; font-family: monospace; text-transform: uppercase;">#ffce54</span> |
+| `green`   | <span style="color: #a0d568; font-weight: 800; font-family: monospace; text-transform: uppercase;">#a0d568</span> |
+| `blue`    | <span style="color: #4fc1e8; font-weight: 800; font-family: monospace; text-transform: uppercase;">#4fc1e8</span> |
+| `purple`  | <span style="color: #ac92eb; font-weight: 800; font-family: monospace; text-transform: uppercase;">#ac92eb</span> |
+| `warning` | <span style="color: #f8de6b; font-weight: 800; font-family: monospace; text-transform: uppercase;">#F8DE6B</span> |
+| `error`   | <span style="color: #EB6383; font-weight: 800; font-family: monospace; text-transform: uppercase;">#EB6383</span> |
+| `success` | <span style="color: #90ec90; font-weight: 800; font-family: monospace; text-transform: uppercase;">#90ec90</span> |
+| `default` | <span style="color: #c5c5c5; font-weight: 800; font-family: monospace; text-transform: uppercase;">#c5c5c5</span> |
+
+Certain components can have emphasis applied to them. This can be:
+
+-   <span style="color: #c42331; font-weight: 800; font-family: monospace">primary (red)</span>,
+-   <span style="color: #4e23c4; font-weight: 800; font-family: monospace">secondary (purple)</span>,
+-   or, <span style="color: #c5c5c5; font-weight: 800; font-family: monospace">none (default)</span>
+
+## Components
+
+### Button
+
+The button component has a variety of animations and styles for you to pick from.
+
+```jsx
+import { Button } from "nextjs-simple-components";
+
+return <Button>Text/Children Here</Button>;
+```
+
+#### States
+
+The button can be in many states that effect its interactivity/appearance. These can be applied as booleans via the button's attributes. Example:
+
+```jsx
+return <Button disabled={true}>Text/Children Here</Button>;
+// or
+return <Button disabled>Text/Children Here</Button>;
+```
+
+| Attribute   | Value            | Description                                                                                          |
+| ----------- | ---------------- | ---------------------------------------------------------------------------------------------------- |
+| `focusable` | `true` / `false` | Sets whether or not a button can be focused on. Default `false`.                                     |
+| `disabled`  | `true` / `false` | Sets whether or not a button can be clicked on. Default `false`.                                     |
+| `loading`   | `true` / `false` | Sets whether or not a button is loading. Default `false`. Buttons with this state are also disabled. |
+
+#### Style Modifications
+
+| Attribute   | Value                                                         | Description                                                                        |
+| ----------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `emphasis`  | `"primary"` / `"secondary"` / `"none"`                        | Sets emphasis using the primary/secondary color-scheme. Default `none`.            |
+| `color`     | Any value from the [supported list of colors](#colors) above. | Sets the buttons color. Overrides emphasis attribute.                              |
+| `icon`      | `true` / `false`                                              | Squares up the button for icon-only.                                               |
+| `hollow`    | `true` / `false`                                              | Hollows out the button and gives it a border.                                      |
+| `underline` | `true` / `false`                                              | Makes the button's border an underline only. **_Must be a hollow button!_**        |
+| `fill`      | `true` / `false`                                              | Makes the button fill all available horizontal space.                              |
+| `compact`   | `true` / `false`                                              | Makes the button's padding and font smaller so that it can fit in a smaller space. |
+
+---
+
+### Button Group
+
+The button group holds an unlimited number of `<Button/>`s in a stylish and compact way.
+
+```jsx
+import { Button } from "nextjs-simple-components";
+
+return (
+	<Button.Group>
+		...<Button></Button>
+	</Button.Group>
+);
+```
+
+#### Style Modifications
+
+| Attribute  | Value            | Description                                                                  |
+| ---------- | ---------------- | ---------------------------------------------------------------------------- |
+| `split`    | `true` / `false` | Puts a gap between the buttons.                                              |
+| `wrap`     | `true` / `false` | Stops the group from staying in one line and allows it to fit spaces better. |
+| `vertical` | `true` / `false` | Lists the buttons vertically rather than horizontally.                       |
+
+---
+
+### Button Label
+
+---
+
+### Pagination
+
+---
+
+### Slider
+
+---
