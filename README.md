@@ -138,6 +138,25 @@ return (
 
 ### Button Label
 
+A button label goes inside of a button and can be used for icons, to indicate data, or whatever else you what emphasis applied to.
+
+```jsx
+import { Button } from "nextjs-simple-components";
+
+return (
+	<Button>
+		Cart
+		<Button.Label>{cart.length}</Button.Label>
+	</Button>
+);
+```
+
+#### Style Modifications
+
+| Attribute | Value            | Description                                                      |
+| --------- | ---------------- | ---------------------------------------------------------------- |
+| `icon`    | `true` / `false` | Properly displays when only an svg/icon is present in the label. |
+
 ---
 
 ### Pagination

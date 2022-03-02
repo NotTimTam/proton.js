@@ -82,4 +82,36 @@ const Group = (props) => {
 
 Button.Group = Group;
 
+const Label = (props) => {
+	const { children, icon, className } = props;
+
+	const [extraAttributes, setExtraAttributes] = useState({});
+
+	useEffect(() => {
+		let nProps = { ...props };
+
+		delete nProps.children;
+		delete nProps.icon;
+		delete nProps.className;
+
+		setExtraAttributes(nProps);
+	}, [props]);
+
+	const applyProps = () => ({
+		...extraAttributes,
+	});
+
+	return (
+		<div
+			icon={icon && +icon ? "1" : undefined}
+			className={`nsc button-label${className ? " " + className : ""}`}
+			{...applyProps()}
+		>
+			{children}
+		</div>
+	);
+};
+
+Button.Label = Label;
+
 export default Button;

@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { Button } from "../nextjs-simple-components";
 import {
 	BsAlarm,
+	BsBug,
 	BsCalendar,
 	BsClock,
 	BsCurrencyDollar,
 	BsCurrencyEuro,
 	BsFileEarmarkX,
+	BsGlobe,
 	BsPerson,
 	BsTrash,
 } from "react-icons/bs";
@@ -24,19 +26,35 @@ export default function Home() {
 
 	return (
 		<div>
+			<Button>
+				Hello
+				<Button.Label icon className="lololool" id="hehe">
+					<BsGlobe /> lol
+				</Button.Label>
+			</Button>
+
+			<Button hollow>
+				Hello
+				<Button.Label>World</Button.Label>
+			</Button>
+
 			<Button.Group split wrap>
 				<Button selected={sel} hollow circular color="error">
 					<BsCurrencyEuro /> Euros
 				</Button>
 				<Button hollow underline color="green">
 					<BsCurrencyDollar /> Real Money
-				</Button>{" "}
-			</Button.Group>
-			<Button.Group split>
-				<Button compact>Whaoh</Button>
-				<Button icon color="yellow" underline>
-					<BsFileEarmarkX />
 				</Button>
+			</Button.Group>
+			<Button.Group wrap>
+				<Button compact>Whaoh</Button>
+				<Button color="yellow" underline compact>
+					<BsFileEarmarkX /> lol
+					<Button.Label icon>
+						<BsBug /> lol
+					</Button.Label>
+				</Button>
+
 				<Button compact color="red">
 					<BsFileEarmarkX /> Whaoh
 				</Button>
@@ -57,6 +75,11 @@ export default function Home() {
 				</Button>
 				<Button emphasis="primary" hollow>
 					<BsAlarm /> Alarms
+					<Button.Label>World</Button.Label>
+				</Button>
+				<Button color="yellow">
+					<BsFileEarmarkX />
+					<Button.Label>World</Button.Label>
 				</Button>
 				<Button emphasis="secondary">
 					<BsCalendar /> Calendar
