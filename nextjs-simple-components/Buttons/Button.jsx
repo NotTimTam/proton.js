@@ -17,6 +17,32 @@ const Button = (props) => {
 		selected,
 	} = props;
 
+	const [extraAttributes, setExtraAttributes] = useState({});
+
+	useEffect(() => {
+		let nProps = { ...props };
+
+		delete nProps.children;
+		delete nProps.focusable;
+		delete nProps.disabled;
+		delete nProps.emphasis;
+		delete nProps.icon;
+		delete nProps.hollow;
+		delete nProps.fill;
+		delete nProps.color;
+		delete nProps.circular;
+		delete nProps.compact;
+		delete nProps.loading;
+		delete nProps.underline;
+		delete nProps.selected;
+
+		setExtraAttributes(nProps);
+	}, [props]);
+
+	const applyProps = () => ({
+		...extraAttributes,
+	});
+
 	return (
 		<button
 			focusable={focusable && +focusable ? "1" : undefined}
@@ -33,6 +59,7 @@ const Button = (props) => {
 			emphasis={emphasis || "default"}
 			color={color && color}
 			className={`nsc button`}
+			{...applyProps()}
 		>
 			<div className="nsc children">{children}</div>
 			{loading && (

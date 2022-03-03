@@ -46,7 +46,7 @@ $border-style: solid;
 $border-style-blur: dotted;
 $border-color: map-get($colors, "default");
 
-$border: $border-width $border-style $border-color $border-color;
+$border: $border-width $border-style $border-color;
 
 // Transitions
 $transition: all 0.3s ease-in-out;

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Button } from "../nextjs-simple-components";
+import { Button, ProgressBar } from "../nextjs-simple-components";
 import {
 	BsAlarm,
 	BsBug,
@@ -16,81 +16,127 @@ import {
 } from "react-icons/bs";
 
 export default function Home() {
-	const [sel, setSel] = useState(true);
+	const [sel, setSel] = useState(null);
+	const [loadedColor, setLoadedColor] = useState("orange");
+	const [sliderVal, setSliderVal] = useState(1);
+
+	const handleSelected = (e) => {
+		// console.log(sel);
+		setSel(e.target.value);
+		setLoadedColor(e.target.getAttribute("color"));
+		console.log(sel);
+	};
+
+	const handleChange = () => {
+		setSliderVal((sliderVal) => (sliderVal <= 100 ? sliderVal + 1 : 0));
+	};
 
 	useEffect(() => {
-		setTimeout(() => {
-			setSel(!sel);
-		}, 1000);
-	}, [sel]);
+		window.addEventListener("keydown", handleChange);
+
+		return () => {
+			window.removeEventListener("keydown", handleChange);
+		};
+	}, []);
 
 	return (
-		<div>
-			<Button>
-				Hello
-				<Button.Label icon className="lololool" id="hehe">
-					<BsGlobe /> lol
-				</Button.Label>
-			</Button>
-
-			<Button hollow>
-				Hello
-				<Button.Label>World</Button.Label>
-			</Button>
-
-			<Button.Group split wrap>
-				<Button selected={sel} hollow circular color="error">
-					<BsCurrencyEuro /> Euros
-				</Button>
-				<Button hollow underline color="green">
-					<BsCurrencyDollar /> Real Money
-				</Button>
-			</Button.Group>
-			<Button.Group wrap>
-				<Button compact>Whaoh</Button>
-				<Button color="yellow" underline compact>
-					<BsFileEarmarkX /> lol
-					<Button.Label icon>
-						<BsBug /> lol
-					</Button.Label>
-				</Button>
-
-				<Button compact color="red">
-					<BsFileEarmarkX /> Whaoh
-				</Button>
-			</Button.Group>
+		<div style={{ display: "flex", flexDirection: "column" }}>
 			<Button.Group
-				vertical
-				style={{
-					width: "75vw",
-					transform: "translate(-50%, -50%)",
-					position: "absolute",
-					top: "50%",
-					left: "50%",
-					maxWidth: "250px",
-				}}
+				wrap
+				style={{ margin: "0 auto", width: "max-content" }}
 			>
-				<Button emphasis="default">
-					<BsClock /> Clock
+				<Button
+					value="1"
+					hollow
+					underline
+					color="red"
+					selected={sel === "1"}
+					onClick={handleSelected}
+				>
+					Red
 				</Button>
-				<Button emphasis="primary" hollow>
-					<BsAlarm /> Alarms
-					<Button.Label>World</Button.Label>
+				<Button
+					value="2"
+					underline
+					hollow
+					color="orange"
+					selected={sel === "2"}
+					onClick={handleSelected}
+				>
+					Orange
 				</Button>
-				<Button color="yellow">
-					<BsFileEarmarkX />
-					<Button.Label>World</Button.Label>
+				<Button
+					value="3"
+					underline
+					hollow
+					color="yellow"
+					selected={sel === "3"}
+					onClick={handleSelected}
+				>
+					Yellow
 				</Button>
-				<Button emphasis="secondary">
-					<BsCalendar /> Calendar
+				<Button
+					value="4"
+					underline
+					hollow
+					color="green"
+					selected={sel === "4"}
+					onClick={handleSelected}
+				>
+					Green
 				</Button>
-				<Button color="purple">
-					<BsTrash /> Trashcan
+				<Button
+					value="5"
+					underline
+					hollow
+					color="blue"
+					selected={sel === "5"}
+					onClick={handleSelected}
+				>
+					Blue
 				</Button>
-				<Button icon color="red">
-					<BsPerson />
+				<Button
+					value="6"
+					underline
+					hollow
+					color="purple"
+					selected={sel === "6"}
+					onClick={handleSelected}
+				>
+					Purple
 				</Button>
 			</Button.Group>
+			<div>
+				<ProgressBar
+					color={loadedColor}
+					style={{ marginTop: "1rem" }}
+					value={sliderVal}
+					min={0}
+					max={100}
+					// percentage="right"
+					overlay
+				>
+					<span>1</span>
+					<ProgressBar.Spacer />
+					<span>2</span>
+					<ProgressBar.Spacer />
+					<span>3</span>
+					<ProgressBar.Spacer />
+					<span>4</span>
+					<ProgressBar.Spacer />
+					<span>5</span>
+					<ProgressBar.Spacer />
+					<span>6</span>
+					<ProgressBar.Spacer />
+					<span>7</span>
+					<ProgressBar.Spacer />
+					<span>8</span>
+					<ProgressBar.Spacer />
+					<span>9</span>
+					<ProgressBar.Spacer />
+					<span>10</span>
+				</ProgressBar>
+			</div>
 		</div>
 	);
 }

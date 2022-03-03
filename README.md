@@ -159,10 +159,12 @@ return (
 
 ---
 
-### Pagination
+### Progress Bar
+
+The progress bar allows you to display a percentage value with any text over it.
 
 ---
 
-### Slider
+### Pagination
 
 ---

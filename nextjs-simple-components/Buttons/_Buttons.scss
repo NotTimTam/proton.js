@@ -31,6 +31,12 @@ button.nsc.button {
 		gap: $padding;
 		padding: calc($padding) calc($padding * 2);
 
+		pointer-events: none;
+
+		// Transition
+		transition: $transition-fast;
+
+		// Labels
 		div.nsc.button-label {
 			// Flexbox
 			display: flex;
@@ -132,9 +138,18 @@ button.nsc.button {
 			border-top: none;
 			border-left: none;
 			border-right: none;
+			// border-top-color: transparent;
+			// border-left-color: transparent;
+			// border-right-color: transparent;
+
 			border-radius: 0;
 			padding-left: 0;
 			padding-right: 0;
+
+			// div.nsc.children {
+			// 	padding-left: 0;
+			// 	padding-right: 0;
+			// }
 		}
 	}
 
@@ -369,6 +384,8 @@ button.nsc.button {
 			top: 0;
 			left: 0;
 
+			pointer-events: none;
+
 			// Flexbox
 			display: flex;
 			align-items: center;
@@ -452,12 +469,12 @@ div.nsc.button-group {
 
 		&:not([vertical]) {
 			button.nsc.button {
-				&:first-child {
+				&:first-child:not([underline]) {
 					border-top-left-radius: $border-radius;
 					border-bottom-left-radius: $border-radius;
 				}
 
-				&:last-child {
+				&:last-child:not([underline]) {
 					border-top-right-radius: $border-radius;
 					border-bottom-right-radius: $border-radius;
 				}
@@ -468,12 +485,12 @@ div.nsc.button-group {
 			button.nsc.button {
 				width: 100%;
 
-				&:first-child {
+				&:first-child:not([underline]) {
 					border-top-left-radius: $border-radius;
 					border-top-right-radius: $border-radius;
 				}
 
-				&:last-child {
+				&:last-child:not([underline]) {
 					border-bottom-left-radius: $border-radius;
 					border-bottom-right-radius: $border-radius;
 				}
