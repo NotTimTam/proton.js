@@ -1,24 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button, ProgressBar } from "../nextjs-simple-components";
-import {
-	BsAlarm,
-	BsBug,
-	BsCalendar,
-	BsClock,
-	BsCurrencyDollar,
-	BsCurrencyEuro,
-	BsFileEarmarkX,
-	BsGlobe,
-	BsPerson,
-	BsTrash,
-} from "react-icons/bs";
+import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 
 export default function Home() {
-	const [sel, setSel] = useState(null);
-	const [loadedColor, setLoadedColor] = useState("orange");
-	const [sliderVal, setSliderVal] = useState(1);
+	const [sel, setSel] = useState("1");
+	const [loadedColor, setLoadedColor] = useState("red");
+	const [sliderVal, setSliderVal] = useState(50);
+	const [overlay, setOverlay] = useState(true);
+	const [border, setBorder] = useState(true);
 
 	const handleSelected = (e) => {
 		// console.log(sel);
@@ -106,7 +95,13 @@ export default function Home() {
 					Purple
 				</Button>
 			</Button.Group>
-			<div>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+				}}
+			>
 				<ProgressBar
 					color={loadedColor}
 					style={{ marginTop: "1rem" }}
@@ -114,28 +109,58 @@ export default function Home() {
 					min={0}
 					max={100}
 					// percentage="right"
-					overlay
+					border={border}
+					overlay={overlay}
+					backline
 				>
-					<span>1</span>
-					<ProgressBar.Spacer />
-					<span>2</span>
-					<ProgressBar.Spacer />
-					<span>3</span>
-					<ProgressBar.Spacer />
-					<span>4</span>
-					<ProgressBar.Spacer />
-					<span>5</span>
-					<ProgressBar.Spacer />
-					<span>6</span>
-					<ProgressBar.Spacer />
-					<span>7</span>
-					<ProgressBar.Spacer />
-					<span>8</span>
-					<ProgressBar.Spacer />
-					<span>9</span>
-					<ProgressBar.Spacer />
-					<span>10</span>
+					<ProgressBar.Label>
+						<ProgressBar.Dot hollow />
+					</ProgressBar.Label>
+
+					<ProgressBar.Label>
+						<ProgressBar.Dot />
+					</ProgressBar.Label>
+
+					<ProgressBar.Label>
+						<ProgressBar.Dot hollow />
+					</ProgressBar.Label>
+
+					<ProgressBar.Label>
+						<ProgressBar.Dot />
+					</ProgressBar.Label>
+
+					<ProgressBar.Label>
+						<ProgressBar.Dot hollow />
+					</ProgressBar.Label>
 				</ProgressBar>
+				<Button.Group>
+					<Button
+						hollow
+						color={loadedColor}
+						onClick={() => setOverlay(!overlay)}
+					>
+						{overlay ? <BsToggle2On /> : <BsToggle2Off />}
+						Toggle Overlay
+						<Button.Label>{overlay ? "Off" : "On"}</Button.Label>
+					</Button>
+					<Button
+						color={loadedColor}
+						onClick={() => setBorder(!border)}
+					>
+						{border ? <BsToggle2On /> : <BsToggle2Off />}
+						Toggle Border
+						<Button.Label>{border ? "Off" : "On"}</Button.Label>
+					</Button>
+				</Button.Group>
+				{/* <input
+					type="range"
+					min={0}
+					max={100}
+					step={1}
+					onChange={(e) => {
+						setSliderVal(e.target.value);
+					}}
+				/> */}
 			</div>
 		</div>
 	);

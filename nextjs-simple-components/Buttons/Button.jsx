@@ -15,6 +15,7 @@ const Button = (props) => {
 		loading,
 		underline,
 		selected,
+		className,
 	} = props;
 
 	const [extraAttributes, setExtraAttributes] = useState({});
@@ -35,6 +36,7 @@ const Button = (props) => {
 		delete nProps.loading;
 		delete nProps.underline;
 		delete nProps.selected;
+		delete nProps.className;
 
 		setExtraAttributes(nProps);
 	}, [props]);
@@ -58,7 +60,7 @@ const Button = (props) => {
 			disabled={disabled || !!loading}
 			emphasis={emphasis || "default"}
 			color={color && color}
-			className={`nsc button`}
+			className={`nsc button${className ? " " + className : ""}`}
 			{...applyProps()}
 		>
 			<div className="nsc children">{children}</div>

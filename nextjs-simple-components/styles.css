@@ -1343,11 +1343,16 @@ div.nsc.progress-bar {
   height: max-content;
   overflow: hidden;
   position: relative;
-  border: 0.15rem solid #ebebeb;
   border-radius: 0.25rem;
+  border: 0.15rem solid #ebebeb;
+  border-color: #ebebeb;
+  border-width: 0;
   transition: all 0.15s ease-in-out;
   background: #ebebeb;
   color: white;
+}
+div.nsc.progress-bar[border] {
+  border-width: 0.15rem;
 }
 div.nsc.progress-bar[color=red] {
   border-color: #ed5564;
@@ -1356,6 +1361,9 @@ div.nsc.progress-bar[color=red] div.nsc.fill {
   background: #ed5564;
 }
 div.nsc.progress-bar[color=red] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=red][overlay] div.nsc.spacer {
   background: #ed5564;
 }
 div.nsc.progress-bar[color=orange] {
@@ -1365,6 +1373,9 @@ div.nsc.progress-bar[color=orange] div.nsc.fill {
   background: #f1b037;
 }
 div.nsc.progress-bar[color=orange] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=orange][overlay] div.nsc.spacer {
   background: #f1b037;
 }
 div.nsc.progress-bar[color=yellow] {
@@ -1374,6 +1385,9 @@ div.nsc.progress-bar[color=yellow] div.nsc.fill {
   background: #ffce54;
 }
 div.nsc.progress-bar[color=yellow] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=yellow][overlay] div.nsc.spacer {
   background: #ffce54;
 }
 div.nsc.progress-bar[color=green] {
@@ -1383,6 +1397,9 @@ div.nsc.progress-bar[color=green] div.nsc.fill {
   background: #a0d568;
 }
 div.nsc.progress-bar[color=green] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=green][overlay] div.nsc.spacer {
   background: #a0d568;
 }
 div.nsc.progress-bar[color=blue] {
@@ -1392,6 +1409,9 @@ div.nsc.progress-bar[color=blue] div.nsc.fill {
   background: #4fc1e8;
 }
 div.nsc.progress-bar[color=blue] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=blue][overlay] div.nsc.spacer {
   background: #4fc1e8;
 }
 div.nsc.progress-bar[color=purple] {
@@ -1401,6 +1421,9 @@ div.nsc.progress-bar[color=purple] div.nsc.fill {
   background: #ac92eb;
 }
 div.nsc.progress-bar[color=purple] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=purple][overlay] div.nsc.spacer {
   background: #ac92eb;
 }
 div.nsc.progress-bar[color=warning] {
@@ -1410,6 +1433,9 @@ div.nsc.progress-bar[color=warning] div.nsc.fill {
   background: #f8de6b;
 }
 div.nsc.progress-bar[color=warning] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=warning][overlay] div.nsc.spacer {
   background: #f8de6b;
 }
 div.nsc.progress-bar[color=error] {
@@ -1419,6 +1445,9 @@ div.nsc.progress-bar[color=error] div.nsc.fill {
   background: #eb6383;
 }
 div.nsc.progress-bar[color=error] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=error][overlay] div.nsc.spacer {
   background: #eb6383;
 }
 div.nsc.progress-bar[color=default] {
@@ -1428,6 +1457,9 @@ div.nsc.progress-bar[color=default] div.nsc.fill {
   background: #ebebeb;
 }
 div.nsc.progress-bar[color=default] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=default][overlay] div.nsc.spacer {
   background: #ebebeb;
 }
 div.nsc.progress-bar[color=success] {
@@ -1437,6 +1469,9 @@ div.nsc.progress-bar[color=success] div.nsc.fill {
   background: #90ec90;
 }
 div.nsc.progress-bar[color=success] div.nsc.spacer {
+  background: white;
+}
+div.nsc.progress-bar[color=success][overlay] div.nsc.spacer {
   background: #90ec90;
 }
 div.nsc.progress-bar div.nsc.spacer {
@@ -1451,12 +1486,21 @@ div.nsc.progress-bar[overlay] div.nsc.overlay {
   background: white;
   mix-blend-mode: screen;
 }
+div.nsc.progress-bar[overlay] div.nsc.overlay[backline]::after {
+  background: black;
+}
 div.nsc.progress-bar[overlay] div.nsc.overlay div.nsc.children,
 div.nsc.progress-bar[overlay] div.nsc.overlay div.nsc.percentage {
   color: black;
 }
 div.nsc.progress-bar[overlay] div.nsc.overlay div.nsc.spacer {
   background: black;
+}
+div.nsc.progress-bar[overlay] div.nsc.overlay div.nsc.dot {
+  border-color: black;
+}
+div.nsc.progress-bar[overlay] div.nsc.overlay div.nsc.dot[hollow]::after {
+  background: white;
 }
 div.nsc.progress-bar div.nsc.fill {
   width: 0%;
@@ -1486,6 +1530,7 @@ div.nsc.progress-bar div.nsc.overlay div.nsc.children {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  justify-content: space-evenly;
   width: 100%;
   min-height: -webkit-max-content;
   min-height: -moz-max-content;
@@ -1495,10 +1540,56 @@ div.nsc.progress-bar div.nsc.overlay div.nsc.children {
 div.nsc.progress-bar div.nsc.overlay div.nsc.percentage {
   font-weight: bolder;
   color: inherit;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 div.nsc.progress-bar div.nsc.overlay div.nsc.percentage:first-child {
-  margin-right: auto;
+  left: 0.5rem;
 }
 div.nsc.progress-bar div.nsc.overlay div.nsc.percentage:last-child {
-  margin-left: auto;
+  right: 0.5rem;
+}
+div.nsc.progress-bar div.nsc.overlay div.nsc.label {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.nsc.progress-bar div.nsc.overlay div.nsc.dot {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  border: 0.15rem solid #ebebeb;
+  border-radius: 50%;
+  border-color: white;
+  border-width: 0.5rem;
+  background: white;
+}
+div.nsc.progress-bar div.nsc.overlay div.nsc.dot[hollow] {
+  padding: 0.25rem;
+  border-width: 0.25rem;
+  background: none;
+}
+div.nsc.progress-bar div.nsc.overlay div.nsc.dot[hollow]::after {
+  content: "";
+  pointer-events: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+div.nsc.progress-bar div.nsc.overlay[backline]::after {
+  content: "";
+  background: white;
+  width: 95%;
+  height: 0.25rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0.875rem;
+  left: 2.5%;
 }/*# sourceMappingURL=styles.css.map */
