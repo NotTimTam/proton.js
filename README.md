@@ -168,12 +168,12 @@ return (
 
 #### States
 
-| Attribute    | Value              | Description                                                                    |
-| ------------ | ------------------ | ------------------------------------------------------------------------------ |
-| `value`      | `number`           | The current value (%) that the bar is at.                                      |
-| `min`        | `number`           | The minimum value the bar can be at.                                           |
-| `max`        | `number`           | The maximum value the bar can be at.                                           |
-| `percentage` | `"left"`/`"right"` | Adds a percentage display relative to the left or right inner side of the bar. |
+| Attribute    | Value              | Description                                                                                                                          |
+| ------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `value`      | `number`           | The current value (%) that the bar is at.                                                                                            |
+| `min`        | `number`           | The minimum value the bar can be at.                                                                                                 |
+| `max`        | `number`           | The maximum value the bar can be at.                                                                                                 |
+| `percentage` | `"left"`/`"right"` | Adds a percentage display to the left or right inner side of the bar. Cannot be used in tandum with the backline style modification. |
 
 #### Style Modifications
 

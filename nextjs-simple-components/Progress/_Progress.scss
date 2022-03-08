@@ -32,6 +32,7 @@ div.nsc.progress-bar {
 
 			div.nsc.fill {
 				background: $value;
+				// border-color: $value;
 			}
 
 			div.nsc.spacer {
@@ -103,7 +104,10 @@ div.nsc.progress-bar {
 		left: 0;
 
 		// Border
-		// border-radius: $border-radius;
+		border-top-right-radius: calc($border-radius / 2);
+		border-bottom-right-radius: calc($border-radius / 2);
+		// border: $border;
+		// border-color: map-get($colors, "red");
 
 		// Transition
 		transition: $transition-fast;
@@ -153,9 +157,9 @@ div.nsc.progress-bar {
 			font-weight: bolder;
 			color: inherit;
 
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
+			// position: absolute;
+			// top: 50%;
+			// transform: translateY(-50%);
 
 			&:first-child {
 				left: $padding;

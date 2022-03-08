@@ -17,7 +17,7 @@ export default function Home() {
 	};
 
 	const handleChange = () => {
-		setSliderVal((sliderVal) => (sliderVal <= 100 ? sliderVal + 1 : 0));
+		setSliderVal((sliderVal) => (sliderVal < 100 ? sliderVal + 1 : 0));
 	};
 
 	useEffect(() => {
@@ -129,33 +129,15 @@ export default function Home() {
 					value={sliderVal}
 					min={0}
 					max={100}
-					// percentage="right"
+					percentage="left"
 					border={border}
 					overlay={overlay}
-					backline
 				>
-					<ProgressBar.Label>
-						<ProgressBar.Dot hollow />
-					</ProgressBar.Label>
-
-					<ProgressBar.Label>
-						<ProgressBar.Dot />
-						Text
-					</ProgressBar.Label>
-
-					<ProgressBar.Label>
-						<ProgressBar.Dot hollow />
-					</ProgressBar.Label>
-
-					<ProgressBar.Label>
-						<ProgressBar.Dot />
-					</ProgressBar.Label>
-
-					<ProgressBar.Label>
-						<ProgressBar.Dot hollow />
-					</ProgressBar.Label>
+					{/* <ProgressBar.Label>Loading... {sliderVal}</ProgressBar.Label> */}
+					<ProgressBar.Spacer invisible={!overlay} />
+					<ProgressBar.Label>Done!</ProgressBar.Label>
 				</ProgressBar>
-
+				Type furiously to see the progress bar change.
 				{/* <input
 					type="range"
 					min={0}
