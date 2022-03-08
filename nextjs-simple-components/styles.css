@@ -109,8 +109,8 @@ button.nsc.button[fill] {
 }
 button.nsc.button[emphasis=primary] {
   color: white;
-  background: #c42331;
-  border-color: #c42331;
+  background: #2f2f97;
+  border-color: #2f2f97;
 }
 button.nsc.button[emphasis=primary] svg {
   fill: white;
@@ -119,48 +119,48 @@ button.nsc.button[emphasis=primary][loading] div.nsc.loading div.nsc.dot {
   background: white;
 }
 button.nsc.button[emphasis=primary] div.nsc.button-label {
-  background: #991b26;
-  border-color: #991b26 !important;
+  background: #232370;
+  border-color: #232370 !important;
   color: white;
 }
 button.nsc.button[emphasis=primary][hollow] {
   background: none;
-  color: #c42331;
+  color: #2f2f97;
 }
 button.nsc.button[emphasis=primary][hollow] svg {
-  fill: #c42331;
+  fill: #2f2f97;
 }
 button.nsc.button[emphasis=primary][hollow] div.nsc.button-label {
   background: none;
-  color: #c42331;
-  border-color: #c42331 !important;
+  color: #2f2f97;
+  border-color: #2f2f97 !important;
 }
 button.nsc.button[emphasis=primary][hollow][loading] div.nsc.loading div.nsc.dot {
-  background: #c42331;
+  background: #2f2f97;
 }
 button.nsc.button[emphasis=primary]:hover {
-  background: #991b26;
-  border-color: #991b26;
+  background: #232370;
+  border-color: #232370;
 }
 button.nsc.button[emphasis=primary]:hover div.nsc.button-label {
-  background: #581016;
-  border-color: #581016 !important;
+  background: #111136;
+  border-color: #111136 !important;
 }
 button.nsc.button[emphasis=primary]:hover[hollow] {
   background: none;
-  color: #991b26;
+  color: #232370;
 }
 button.nsc.button[emphasis=primary]:hover[hollow] svg {
-  fill: #991b26;
+  fill: #232370;
 }
 button.nsc.button[emphasis=primary]:hover[hollow] div.nsc.button-label {
   background: none;
-  border-color: #991b26 !important;
-  color: #991b26;
+  border-color: #232370 !important;
+  color: #232370;
 }
 button.nsc.button[emphasis=primary]:active, button.nsc.button[emphasis=primary][sel] {
-  background: #581016;
-  border-color: #581016;
+  background: #111136;
+  border-color: #111136;
 }
 button.nsc.button[emphasis=primary]:active div.nsc.button-label, button.nsc.button[emphasis=primary][sel] div.nsc.button-label {
   background: black;
@@ -168,15 +168,15 @@ button.nsc.button[emphasis=primary]:active div.nsc.button-label, button.nsc.butt
 }
 button.nsc.button[emphasis=primary]:active[hollow], button.nsc.button[emphasis=primary][sel][hollow] {
   background: none;
-  color: #581016;
+  color: #111136;
 }
 button.nsc.button[emphasis=primary]:active[hollow] div.nsc.button-label, button.nsc.button[emphasis=primary][sel][hollow] div.nsc.button-label {
   background: none;
-  border-color: #581016 !important;
-  color: #581016;
+  border-color: #111136 !important;
+  color: #111136;
 }
 button.nsc.button[emphasis=primary]:active[hollow] svg, button.nsc.button[emphasis=primary][sel][hollow] svg {
-  fill: #581016;
+  fill: #111136;
 }
 button.nsc.button[emphasis=primary-text] {
   background: white;
@@ -243,8 +243,8 @@ button.nsc.button[emphasis=primary-text]:active[hollow] svg, button.nsc.button[e
 }
 button.nsc.button[emphasis=secondary] {
   color: white;
-  background: #4e23c4;
-  border-color: #4e23c4;
+  background: #a1a2a7;
+  border-color: #a1a2a7;
 }
 button.nsc.button[emphasis=secondary] svg {
   fill: white;
@@ -253,64 +253,64 @@ button.nsc.button[emphasis=secondary][loading] div.nsc.loading div.nsc.dot {
   background: white;
 }
 button.nsc.button[emphasis=secondary] div.nsc.button-label {
-  background: #3d1b99;
-  border-color: #3d1b99 !important;
+  background: #87888e;
+  border-color: #87888e !important;
   color: white;
 }
 button.nsc.button[emphasis=secondary][hollow] {
   background: none;
-  color: #4e23c4;
+  color: #a1a2a7;
 }
 button.nsc.button[emphasis=secondary][hollow] svg {
-  fill: #4e23c4;
+  fill: #a1a2a7;
 }
 button.nsc.button[emphasis=secondary][hollow] div.nsc.button-label {
   background: none;
-  color: #4e23c4;
-  border-color: #4e23c4 !important;
+  color: #a1a2a7;
+  border-color: #a1a2a7 !important;
 }
 button.nsc.button[emphasis=secondary][hollow][loading] div.nsc.loading div.nsc.dot {
-  background: #4e23c4;
+  background: #a1a2a7;
 }
 button.nsc.button[emphasis=secondary]:hover {
-  background: #3d1b99;
-  border-color: #3d1b99;
+  background: #87888e;
+  border-color: #87888e;
 }
 button.nsc.button[emphasis=secondary]:hover div.nsc.button-label {
-  background: #231058;
-  border-color: #231058 !important;
+  background: #616268;
+  border-color: #616268 !important;
 }
 button.nsc.button[emphasis=secondary]:hover[hollow] {
   background: none;
-  color: #3d1b99;
+  color: #87888e;
 }
 button.nsc.button[emphasis=secondary]:hover[hollow] svg {
-  fill: #3d1b99;
+  fill: #87888e;
 }
 button.nsc.button[emphasis=secondary]:hover[hollow] div.nsc.button-label {
   background: none;
-  border-color: #3d1b99 !important;
-  color: #3d1b99;
+  border-color: #87888e !important;
+  color: #87888e;
 }
 button.nsc.button[emphasis=secondary]:active, button.nsc.button[emphasis=secondary][sel] {
-  background: #231058;
-  border-color: #231058;
+  background: #616268;
+  border-color: #616268;
 }
 button.nsc.button[emphasis=secondary]:active div.nsc.button-label, button.nsc.button[emphasis=secondary][sel] div.nsc.button-label {
-  background: black;
-  border-color: black !important;
+  background: #232426;
+  border-color: #232426 !important;
 }
 button.nsc.button[emphasis=secondary]:active[hollow], button.nsc.button[emphasis=secondary][sel][hollow] {
   background: none;
-  color: #231058;
+  color: #616268;
 }
 button.nsc.button[emphasis=secondary]:active[hollow] div.nsc.button-label, button.nsc.button[emphasis=secondary][sel][hollow] div.nsc.button-label {
   background: none;
-  border-color: #231058 !important;
-  color: #231058;
+  border-color: #616268 !important;
+  color: #616268;
 }
 button.nsc.button[emphasis=secondary]:active[hollow] svg, button.nsc.button[emphasis=secondary][sel][hollow] svg {
-  fill: #231058;
+  fill: #616268;
 }
 button.nsc.button[emphasis=secondary-text] {
   background: white;
@@ -1481,6 +1481,9 @@ div.nsc.progress-bar div.nsc.spacer {
   min-height: 0.25rem;
   max-height: 1rem;
   border-radius: 1.25rem;
+}
+div.nsc.progress-bar div.nsc.spacer[invisible] {
+  opacity: 0;
 }
 div.nsc.progress-bar[overlay] div.nsc.overlay {
   background: white;

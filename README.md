@@ -29,7 +29,7 @@ You can apply style/state changes to each component either through attributes. E
 return <Component icon emphasis="primary" />;
 ```
 
-Style modifications that use booleans are defaulted to true when they exist on components.
+Some component states require certain types of values, but the majority are just booleans. Both of the below examples produce the same effect:
 
 ```jsx
 return <>
@@ -66,8 +66,8 @@ Here is a list of the available colors. You can always modify the colors in the 
 
 Certain components can have emphasis applied to them. This can be:
 
--   <span style="color: #c42331; font-weight: 800; font-family: monospace">primary (red)</span>,
--   <span style="color: #4e23c4; font-weight: 800; font-family: monospace">secondary (purple)</span>,
+-   <span style="color: #2f2f97; font-weight: 800; font-family: monospace">primary (purple)</span>,
+-   <span style="color: #a1a2a7; font-weight: 800; font-family: monospace">secondary (grey)</span>,
 -   or, <span style="color: #c5c5c5; font-weight: 800; font-family: monospace">none (default)</span>
 
 ## Components
@@ -84,14 +84,6 @@ return <Button>Text/Children Here</Button>;
 
 #### States
 
-The button can be in many states that effect its interactivity/appearance. These can be applied as booleans via the button's attributes. Example:
-
-```jsx
-return <Button disabled={true}>Text/Children Here</Button>;
-// or
-return <Button disabled>Text/Children Here</Button>;
-```
-
 | Attribute   | Value            | Description                                                                                          |
 | ----------- | ---------------- | ---------------------------------------------------------------------------------------------------- |
 | `focusable` | `true` / `false` | Sets whether or not a button can be focused on. Default `false`.                                     |
@@ -103,7 +95,7 @@ return <Button disabled>Text/Children Here</Button>;
 | Attribute   | Value                                                         | Description                                                                        |
 | ----------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `emphasis`  | `"primary"` / `"secondary"` / `"none"`                        | Sets emphasis using the primary/secondary color-scheme. Default `none`.            |
-| `color`     | Any value from the [supported list of colors](#colors) above. | Sets the buttons color. Overrides emphasis attribute.                              |
+| `color`     | Any value from the [supported list of colors](#colors) above. | Sets the button's color. Overrides emphasis attribute.                             |
 | `icon`      | `true` / `false`                                              | Squares up the button for icon-only.                                               |
 | `hollow`    | `true` / `false`                                              | Hollows out the button and gives it a border.                                      |
 | `underline` | `true` / `false`                                              | Makes the button's border an underline only. **_Must be a hollow button!_**        |
@@ -162,6 +154,172 @@ return (
 ### Progress Bar
 
 The progress bar allows you to display a percentage value with any text over it.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100}>
+		<ProgressBar.Label>Hello</ProgressBar.Label>
+		<ProgressBar.Label>World</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+#### States
+
+| Attribute    | Value              | Description                                                                    |
+| ------------ | ------------------ | ------------------------------------------------------------------------------ |
+| `value`      | `number`           | The current value (%) that the bar is at.                                      |
+| `min`        | `number`           | The minimum value the bar can be at.                                           |
+| `max`        | `number`           | The maximum value the bar can be at.                                           |
+| `percentage` | `"left"`/`"right"` | Adds a percentage display relative to the left or right inner side of the bar. |
+
+#### Style Modifications
+
+| Attribute  | Value                                                         | Description                                                 |
+| ---------- | ------------------------------------------------------------- | ----------------------------------------------------------- |
+| `color`    | Any value from the [supported list of colors](#colors) above. | Sets the bar's color.                                       |
+| `overlay`  | `true` / `false`                                              | Creates an overlay/transparency effect on the bar.          |
+| `border`   | `true` / `false`                                              | Adds a border to the bar.                                   |
+| `backline` | `true` / `false`                                              | Adds a line across the bar that works with labels and dots. |
+
+---
+
+### Progress Bar Spacer
+
+The spacer goes inside of a progress bar and takes up as much space as it can.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100}>
+		<ProgressBar.Label>Hello</ProgressBar.Label>
+		<ProgressBar.Spacer />
+		<ProgressBar.Label>World</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+#### States
+
+| Attribute   | Value            | Description                                                  |
+| ----------- | ---------------- | ------------------------------------------------------------ |
+| `invisible` | `true` / `false` | Hides the spacer while maintaining its "spacing" properties. |
+
+---
+
+### <a name="labelRules">Progress Bar Label</a>
+
+The label is a box that should contain any inner content for the bar, excluding spacers. You can have multiple spacers and they will stay in the bar properly spaced. Please keep in mind that the progress bar should maintain a horizontal line and won't wrap properly.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100}>
+		<ProgressBar.Label>Hello</ProgressBar.Label>
+		<ProgressBar.Label>World</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+**Consistency is key** to making the progress bar flow properly. I.e.:
+
+-   If one label contains a dot component, _all of them should_.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100}>
+		<ProgressBar.Label>
+			<ProgressBar.Dot /> <!-- Good -->
+		</ProgressBar.Label>
+		<ProgressBar.Label>
+			<ProgressBar.Dot /> <!-- Good -->
+		</ProgressBar.Label>
+		<ProgressBar.Label>
+			<!-- Should have a dot -->
+		</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+-   All dots should _be the first element in the label_.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100}>
+		<ProgressBar.Label>
+			<ProgressBar.Dot /> <!-- Good -->
+			Text
+		</ProgressBar.Label>
+		<ProgressBar.Label>
+			<ProgressBar.Dot /> <!-- Good -->
+			Text
+		</ProgressBar.Label>
+		<ProgressBar.Label>
+			Text
+			<ProgressBar.Dot /> <!-- Bad, dots always go first. -->
+		</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+-   If a label contains text and dot components, and the progress bar has a backline property, then _all of the labels in the bar should contain text to have the dots line up properly_.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100}>
+		<ProgressBar.Label>
+			<ProgressBar.Dot /> <!-- Good -->
+			Text
+		</ProgressBar.Label>
+		<ProgressBar.Label>
+			<ProgressBar.Dot /> <!-- Good -->
+			Text
+		</ProgressBar.Label>
+		<ProgressBar.Label>
+			<ProgressBar.Dot />
+			<!-- No text means this dot will be unaligned. -->
+		</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+---
+
+### Progress Bar Dot
+
+Dots are nice indicators of "steps" inside of a progress bar. They should be contained within labels. They can also be displayed alongside text, but the styling rules described in [the label rules](#labelRules) must be followed.
+
+```jsx
+import { ProgressBar } from "nextjs-simple-components";
+
+return (
+	<ProgressBar value={50} min={0} max={100} backline>
+		<ProgressBar.Label>
+			<ProgressBar.Dot />
+		</ProgressBar.Label>
+
+		<ProgressBar.Label>
+			<ProgressBar.Dot />
+		</ProgressBar.Label>
+	</ProgressBar>
+);
+```
+
+#### Style Modifications
+
+| Attribute | Value            | Description                                                                                                                                                                |
+| --------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hollow`  | `true` / `false` | Makes the dot hollow. If you do not have the overlay state set on the bar, but you do have the backline state set, this will not look right. All other scenarios are fine. |
 
 ---
 

@@ -102,9 +102,30 @@ export default function Home() {
 					alignItems: "center",
 				}}
 			>
+				<Button.Group>
+					<Button
+						compact
+						emphasis="secondary"
+						onClick={() => setOverlay(!overlay)}
+					>
+						<Button.Label>
+							{overlay ? <BsToggle2On /> : <BsToggle2Off />}
+						</Button.Label>
+						Overlay {!overlay ? "Off" : "On"}
+					</Button>
+					<Button
+						compact
+						emphasis="primary"
+						onClick={() => setBorder(!border)}
+					>
+						<Button.Label>
+							{border ? <BsToggle2On /> : <BsToggle2Off />}
+						</Button.Label>
+						Border {!border ? "Off" : "On"}
+					</Button>
+				</Button.Group>
 				<ProgressBar
 					color={loadedColor}
-					style={{ marginTop: "1rem" }}
 					value={sliderVal}
 					min={0}
 					max={100}
@@ -119,6 +140,7 @@ export default function Home() {
 
 					<ProgressBar.Label>
 						<ProgressBar.Dot />
+						Text
 					</ProgressBar.Label>
 
 					<ProgressBar.Label>
@@ -133,25 +155,7 @@ export default function Home() {
 						<ProgressBar.Dot hollow />
 					</ProgressBar.Label>
 				</ProgressBar>
-				<Button.Group>
-					<Button
-						hollow
-						color={loadedColor}
-						onClick={() => setOverlay(!overlay)}
-					>
-						{overlay ? <BsToggle2On /> : <BsToggle2Off />}
-						Toggle Overlay
-						<Button.Label>{overlay ? "Off" : "On"}</Button.Label>
-					</Button>
-					<Button
-						color={loadedColor}
-						onClick={() => setBorder(!border)}
-					>
-						{border ? <BsToggle2On /> : <BsToggle2Off />}
-						Toggle Border
-						<Button.Label>{border ? "Off" : "On"}</Button.Label>
-					</Button>
-				</Button.Group>
+
 				{/* <input
 					type="range"
 					min={0}

@@ -54,6 +54,10 @@ div.nsc.progress-bar {
 		min-height: 0.25rem;
 		max-height: 1rem;
 		border-radius: $border-radius-circular;
+
+		&[invisible] {
+			opacity: 0;
+		}
 	}
 
 	// Filled Overlay
