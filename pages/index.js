@@ -6,7 +6,7 @@ export default function Home() {
 	const [sel, setSel] = useState("1");
 	const [loadedColor, setLoadedColor] = useState("red");
 	const [sliderVal, setSliderVal] = useState(50);
-	const [overlay, setOverlay] = useState(true);
+	const [overlay, setOverlay] = useState(false);
 	const [border, setBorder] = useState(true);
 
 	const handleSelected = (e) => {
@@ -21,10 +21,10 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		window.addEventListener("keydown", handleChange);
+		window.setInterval(handleChange, 75);
 
 		return () => {
-			window.removeEventListener("keydown", handleChange);
+			window.clearInterval(handleChange, 75);
 		};
 	}, []);
 
@@ -105,7 +105,7 @@ export default function Home() {
 				<Button.Group>
 					<Button
 						compact
-						emphasis="secondary"
+						emphasis={overlay ? "primary" : "secondary"}
 						onClick={() => setOverlay(!overlay)}
 					>
 						<Button.Label>
@@ -115,7 +115,7 @@ export default function Home() {
 					</Button>
 					<Button
 						compact
-						emphasis="primary"
+						emphasis={border ? "primary" : "secondary"}
 						onClick={() => setBorder(!border)}
 					>
 						<Button.Label>
@@ -134,10 +134,13 @@ export default function Home() {
 					overlay={overlay}
 				>
 					{/* <ProgressBar.Label>Loading... {sliderVal}</ProgressBar.Label> */}
+					<ProgressBar.Label>
+						Loading...
+						{/* {sliderVal % 2 ? "..." : sliderVal % 1 ? ".." : "."} */}
+					</ProgressBar.Label>
 					<ProgressBar.Spacer invisible={!overlay} />
 					<ProgressBar.Label>Done!</ProgressBar.Label>
 				</ProgressBar>
-				Type furiously to see the progress bar change.
 				{/* <input
 					type="range"
 					min={0}
