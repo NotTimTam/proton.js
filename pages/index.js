@@ -3,7 +3,7 @@ import { Button, Pagination, ProgressBar } from "../nextjs-simple-components";
 import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 
 export default function Home() {
-	const [page, setPage] = useState(1);
+	const [page, setPage] = useState(999);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -23,18 +23,13 @@ export default function Home() {
 			<Pagination
 				jumpArrows
 				arrows
-				emphasis="primary"
+				// emphasis="primary"
 				loading={loading}
 				activePage={page}
-				totalPages={5000}
+				totalPages={5000000}
 				boundaryRange={1}
-				onPageChange={async (page) => {
-					setLoading(true);
-
-					setTimeout(() => {
-						setPage(page);
-						setLoading(false);
-					}, 500);
+				onPageChange={(page) => {
+					setPage(page);
 				}}
 			/>
 		</div>
