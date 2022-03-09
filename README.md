@@ -96,7 +96,7 @@ return <Button>Text/Children Here</Button>;
 
 | Attribute   | Value                                                         | Description                                                                        |
 | ----------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `emphasis`  | `"primary"` / `"secondary"` / `"none"`                        | Sets emphasis using the primary/secondary color-scheme. Default `none`.            |
+| `emphasis`  | `"primary"` / `"secondary"` / `"default"`                     | Sets emphasis using the primary/secondary color-scheme. Default unset.             |
 | `color`     | Any value from the [supported list of colors](#colors) above. | Sets the button's color. Overrides emphasis attribute.                             |
 | `icon`      | `true` / `false`                                              | Squares up the button for icon-only.                                               |
 | `hollow`    | `true` / `false`                                              | Hollows out the button and gives it a border.                                      |
@@ -327,4 +327,83 @@ return (
 
 ### Pagination
 
+The pagination component is a simple yet effective button group for pagination.
+
+The paginator does not store page data or load it, it simply allows users to change their page number in an intuitive way, that the developer can use to modify the content of their pages.
+
+```jsx
+import { Pagination } from "nextjs-simple-components";
+import { useState } from "react";
+
+// An example of a fully functional paginator.
+const myPage = () => {
+	const [page, setPage] = useState(1);
+
+	return (
+		<Pagination
+			activePage={page}
+			totalPages={5}
+			onPageChange={(page) => setPage(page)}
+		/>
+	);
+};
+```
+
+#### States
+
+The minimum outside code to get this to work is a single useState that stores the current page. (or equivalent)
+
+| Attribute               | Value                          | Description                                                              |
+| ----------------------- | ------------------------------ | ------------------------------------------------------------------------ |
+| `activePage`            | `number` (variable)            | The current page.                                                        |
+| `totalPages`            | `number` (preferably variable) | The maximum number of pages.                                             |
+| `onPageChange`          | **SEE BELOW**                  | Used to update the current page number.                                  |
+| `boundaryRange`         | `number`                       | The number of pages to display on either side of the current page.       |
+| `overrideButtonContent` | **SEE BELOW**                  | For advanced modification to the content of the page number buttons.     |
+| `arrows`                | `true` / `false`               | Adds arrows for incrementing the page number by one in either direction. |
+| `jumpArrows`            | `true` / `false`               | Adds arrows for jumping to the first/last pages.                         |
+| `disabled`              | `true` / `false`               | Sets the "disabled" state.                                               |
+| `loading`               | `true` / `false`               | Sets the "loading" state.                                                |
+
+##### `onPageChange`
+
+The `onPageChange` function is what makes the paginator work.
+
+Example:
+`onPageChange={(page) => setPage(page)}`
+
+This attribute passes a function through to the paginator, telling it what to do when it changes a page.
+
+For instance, in the above example, _the paginator will hand its new page number to the function, which is then used to overwrite a state._
+
+Other functions can be used, so long as the `activePage` property is kept consistent with the new page number.
+
+##### `overrideButtonContent`
+
+The `overrideButtonContent` function is for more advanced developers who want to change the content of the page number buttons.
+
+It takes in one parameter, the page number, and returns whatever content the developer would like. This can be **HTML** content, **plaintext**, and more.
+
+Example:
+`` overrideButtonContent={(pageNumber) => `${pageNumber}/${maxPages}`} ``
+
+Instead of the default, the above example will make each page number button display a fraction. I.e.: `"4/50"`.
+
+#### Style Modifications
+
+| Attribute   | Value                                                         | Description                                                            |
+| ----------- | ------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `emphasis`  | `"primary"` / `"secondary"` / `"default"`                     | Sets emphasis using the primary/secondary color-scheme. Default unset. |
+| `split`     | `true` / `false`                                              | Splits the buttons apart in the button group.                          |
+| `wrap`      | `true` / `false`                                              | Adds `flex-wrap` to the button group.                                  |
+| `vertical`  | `true` / `false`                                              | Makes the buttons vertical.                                            |
+| `color`     | Any value from the [supported list of colors](#colors) above. | Changes the color of the buttons.                                      |
+| `hollow`    | `true` / `false`                                              | Makes the buttons hollow.                                              |
+| `underline` | `true` / `false`                                              | Adds an underline to the buttons. (must be hollow)                     |
+| `compact`   | `true` / `false`                                              | Makes the paginator more compact for smaller spaces.                   |
+
 ---
+
+```
+
+```

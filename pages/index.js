@@ -31,6 +31,10 @@ export default function Home() {
 				color="red"
 				// boundaryRange={1}
 				onPageChange={(page) => {
+					if (page > totalPages) {
+						setPage(0);
+						return;
+					}
 					setPage(page);
 				}}
 			/>
