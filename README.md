@@ -4,10 +4,12 @@ A small, easy-to-learn UI library for Next.js/React.js
 
 NSC is not a full UI library, instead it is a collection of highly modifiable components for you to drop into existing projects.
 
-Works well with these libraries:
+All icons used in this library are from [bootstrap-icons](https://icons.getbootstrap.com/), but it is not required as a dependency.
 
-[`react-icons`](https://react-icons.github.io/react-icons/)
-[`bootstrap-icons`](https://icons.getbootstrap.com/)
+NSC works well with these libraries:
+
+-   [bootstrap-icons](https://icons.getbootstrap.com/) `npm i bootstrap-icons`
+-   [react-icons](https://react-icons.github.io/react-icons/) `npm i react-icons`
 
 ---
 
