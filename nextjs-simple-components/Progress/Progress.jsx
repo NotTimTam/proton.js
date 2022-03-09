@@ -21,9 +21,13 @@ const ProgressBar = (props) => {
 	const [val, setVal] = useState(value);
 
 	useEffect(() => {
-		setVal(value);
-		if (val < min) setVal(min);
-		if (val > max) setVal(max);
+		let valCheck = value;
+		if (valCheck < min) valCheck = min;
+		if (valCheck > max) valCheck = max;
+
+		valCheck = Math.round((valCheck / max) * 100);
+
+		setVal(valCheck);
 	}, [value]);
 
 	const [extraAttributes, setExtraAttributes] = useState({});
