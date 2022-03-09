@@ -55,7 +55,7 @@ const ProgressBar = (props) => {
 
 	return (
 		<div
-			color={color && color}
+			color={color ? color : "red"}
 			min={min}
 			max={max}
 			value={val}

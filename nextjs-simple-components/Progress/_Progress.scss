@@ -113,7 +113,7 @@ div.nsc.progress-bar {
 		transition: $transition-fast;
 
 		// Color
-		background: map-get($colors, "red");
+		background: map-get($colors, "default");
 	}
 
 	div.nsc.overlay {

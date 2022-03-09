@@ -4,7 +4,7 @@ import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 
 export default function Home() {
 	const [page, setPage] = useState(1);
-	const [totalPages, setTotalPages] = useState(25);
+	const [totalPages, setTotalPages] = useState(10);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -28,12 +28,13 @@ export default function Home() {
 				loading={loading}
 				activePage={page}
 				totalPages={totalPages}
+				color="red"
 				// boundaryRange={1}
 				onPageChange={(page) => {
 					setPage(page);
 				}}
 			/>
-			<ProgressBar overlay min={0} max={totalPages} value={page}>
+			<ProgressBar border overlay min={0} max={totalPages} value={page}>
 				{[...Array(totalPages)].map((item) => (
 					<>
 						<ProgressBar.Spacer />

@@ -1515,7 +1515,7 @@ div.nsc.progress-bar div.nsc.fill {
   border-top-right-radius: 0.125rem;
   border-bottom-right-radius: 0.125rem;
   transition: all 0.15s ease-in-out;
-  background: #ed5564;
+  background: #ebebeb;
 }
 div.nsc.progress-bar div.nsc.overlay {
   width: 100%;
