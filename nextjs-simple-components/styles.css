@@ -57,6 +57,9 @@ button.nsc.button svg,
 button.nsc.button div.nsc.button-label svg {
   transition: all 0.15s ease-in-out;
 }
+button.nsc.button[noborder] {
+  border: none !important;
+}
 button.nsc.button[focusable]:focus {
   outline: 1px solid #90ec90;
 }
@@ -1594,4 +1597,420 @@ div.nsc.progress-bar div.nsc.overlay[backline]::after {
   position: absolute;
   top: 0.875rem;
   left: 2.5%;
+}
+
+div.nsc.input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 0.15rem solid #ebebeb;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  transition: all 0.15s ease-in-out;
+}
+div.nsc.input svg, div.nsc.input[type=checkbox] div.nsc.checkbox-display {
+  transition: all 0.15s ease-in-out;
+}
+div.nsc.input[emphasis=primary] {
+  color: #2f2f97;
+  border-color: #2f2f97;
+}
+div.nsc.input[emphasis=primary] svg {
+  fill: #2f2f97;
+}
+div.nsc.input[emphasis=primary]:hover {
+  color: #232370;
+  border-color: #232370;
+}
+div.nsc.input[emphasis=primary]:hover svg {
+  fill: #232370;
+}
+div.nsc.input[emphasis=primary]:active, div.nsc.input[emphasis=primary]:focus-within, div.nsc.input[emphasis=primary]:focus {
+  color: #111136;
+  border-color: #111136;
+}
+div.nsc.input[emphasis=primary]:active svg, div.nsc.input[emphasis=primary]:focus-within svg, div.nsc.input[emphasis=primary]:focus svg {
+  fill: #111136;
+}
+div.nsc.input[emphasis=primary-text] {
+  color: white;
+  border-color: white;
+}
+div.nsc.input[emphasis=primary-text] svg {
+  fill: white;
+}
+div.nsc.input[emphasis=primary-text]:hover {
+  color: #e6e6e6;
+  border-color: #e6e6e6;
+}
+div.nsc.input[emphasis=primary-text]:hover svg {
+  fill: #e6e6e6;
+}
+div.nsc.input[emphasis=primary-text]:active, div.nsc.input[emphasis=primary-text]:focus-within, div.nsc.input[emphasis=primary-text]:focus {
+  color: #bfbfbf;
+  border-color: #bfbfbf;
+}
+div.nsc.input[emphasis=primary-text]:active svg, div.nsc.input[emphasis=primary-text]:focus-within svg, div.nsc.input[emphasis=primary-text]:focus svg {
+  fill: #bfbfbf;
+}
+div.nsc.input[emphasis=secondary] {
+  color: #a1a2a7;
+  border-color: #a1a2a7;
+}
+div.nsc.input[emphasis=secondary] svg {
+  fill: #a1a2a7;
+}
+div.nsc.input[emphasis=secondary]:hover {
+  color: #87888e;
+  border-color: #87888e;
+}
+div.nsc.input[emphasis=secondary]:hover svg {
+  fill: #87888e;
+}
+div.nsc.input[emphasis=secondary]:active, div.nsc.input[emphasis=secondary]:focus-within, div.nsc.input[emphasis=secondary]:focus {
+  color: #616268;
+  border-color: #616268;
+}
+div.nsc.input[emphasis=secondary]:active svg, div.nsc.input[emphasis=secondary]:focus-within svg, div.nsc.input[emphasis=secondary]:focus svg {
+  fill: #616268;
+}
+div.nsc.input[emphasis=secondary-text] {
+  color: white;
+  border-color: white;
+}
+div.nsc.input[emphasis=secondary-text] svg {
+  fill: white;
+}
+div.nsc.input[emphasis=secondary-text]:hover {
+  color: #e6e6e6;
+  border-color: #e6e6e6;
+}
+div.nsc.input[emphasis=secondary-text]:hover svg {
+  fill: #e6e6e6;
+}
+div.nsc.input[emphasis=secondary-text]:active, div.nsc.input[emphasis=secondary-text]:focus-within, div.nsc.input[emphasis=secondary-text]:focus {
+  color: #bfbfbf;
+  border-color: #bfbfbf;
+}
+div.nsc.input[emphasis=secondary-text]:active svg, div.nsc.input[emphasis=secondary-text]:focus-within svg, div.nsc.input[emphasis=secondary-text]:focus svg {
+  fill: #bfbfbf;
+}
+div.nsc.input[emphasis=default] {
+  color: #ebebeb;
+  border-color: #ebebeb;
+}
+div.nsc.input[emphasis=default] svg {
+  fill: #ebebeb;
+}
+div.nsc.input[emphasis=default]:hover {
+  color: #d2d2d2;
+  border-color: #d2d2d2;
+}
+div.nsc.input[emphasis=default]:hover svg {
+  fill: #d2d2d2;
+}
+div.nsc.input[emphasis=default]:active, div.nsc.input[emphasis=default]:focus-within, div.nsc.input[emphasis=default]:focus {
+  color: #ababab;
+  border-color: #ababab;
+}
+div.nsc.input[emphasis=default]:active svg, div.nsc.input[emphasis=default]:focus-within svg, div.nsc.input[emphasis=default]:focus svg {
+  fill: #ababab;
+}
+div.nsc.input[emphasis=default-text] {
+  color: black;
+  border-color: black;
+}
+div.nsc.input[emphasis=default-text] svg {
+  fill: black;
+}
+div.nsc.input[emphasis=default-text]:hover {
+  color: black;
+  border-color: black;
+}
+div.nsc.input[emphasis=default-text]:hover svg {
+  fill: black;
+}
+div.nsc.input[emphasis=default-text]:active, div.nsc.input[emphasis=default-text]:focus-within, div.nsc.input[emphasis=default-text]:focus {
+  color: black;
+  border-color: black;
+}
+div.nsc.input[emphasis=default-text]:active svg, div.nsc.input[emphasis=default-text]:focus-within svg, div.nsc.input[emphasis=default-text]:focus svg {
+  fill: black;
+}
+div.nsc.input[color=red] {
+  color: #ed5564;
+  border-color: #ed5564;
+}
+div.nsc.input[color=red] svg {
+  fill: #ed5564;
+}
+div.nsc.input[color=red]:hover {
+  color: #e8273a;
+  border-color: #e8273a;
+}
+div.nsc.input[color=red]:hover svg {
+  fill: #e8273a;
+}
+div.nsc.input[color=red]:active, div.nsc.input[color=red]:focus-within, div.nsc.input[color=red]:focus {
+  color: #b01322;
+  border-color: #b01322;
+}
+div.nsc.input[color=red]:active svg, div.nsc.input[color=red]:focus-within svg, div.nsc.input[color=red]:focus svg {
+  fill: #b01322;
+}
+div.nsc.input[color=orange] {
+  color: #f1b037;
+  border-color: #f1b037;
+}
+div.nsc.input[color=orange] svg {
+  fill: #f1b037;
+}
+div.nsc.input[color=orange]:hover {
+  color: #e59b10;
+  border-color: #e59b10;
+}
+div.nsc.input[color=orange]:hover svg {
+  fill: #e59b10;
+}
+div.nsc.input[color=orange]:active, div.nsc.input[color=orange]:focus-within, div.nsc.input[color=orange]:focus {
+  color: #9d6a0b;
+  border-color: #9d6a0b;
+}
+div.nsc.input[color=orange]:active svg, div.nsc.input[color=orange]:focus-within svg, div.nsc.input[color=orange]:focus svg {
+  fill: #9d6a0b;
+}
+div.nsc.input[color=yellow] {
+  color: #ffce54;
+  border-color: #ffce54;
+}
+div.nsc.input[color=yellow] svg {
+  fill: #ffce54;
+}
+div.nsc.input[color=yellow]:hover {
+  color: #ffbf21;
+  border-color: #ffbf21;
+}
+div.nsc.input[color=yellow]:hover svg {
+  fill: #ffbf21;
+}
+div.nsc.input[color=yellow]:active, div.nsc.input[color=yellow]:focus-within, div.nsc.input[color=yellow]:focus {
+  color: #d49700;
+  border-color: #d49700;
+}
+div.nsc.input[color=yellow]:active svg, div.nsc.input[color=yellow]:focus-within svg, div.nsc.input[color=yellow]:focus svg {
+  fill: #d49700;
+}
+div.nsc.input[color=green] {
+  color: #a0d568;
+  border-color: #a0d568;
+}
+div.nsc.input[color=green] svg {
+  fill: #a0d568;
+}
+div.nsc.input[color=green]:hover {
+  color: #87ca40;
+  border-color: #87ca40;
+}
+div.nsc.input[color=green]:hover svg {
+  fill: #87ca40;
+}
+div.nsc.input[color=green]:active, div.nsc.input[color=green]:focus-within, div.nsc.input[color=green]:focus {
+  color: #609429;
+  border-color: #609429;
+}
+div.nsc.input[color=green]:active svg, div.nsc.input[color=green]:focus-within svg, div.nsc.input[color=green]:focus svg {
+  fill: #609429;
+}
+div.nsc.input[color=blue] {
+  color: #4fc1e8;
+  border-color: #4fc1e8;
+}
+div.nsc.input[color=blue] svg {
+  fill: #4fc1e8;
+}
+div.nsc.input[color=blue]:hover {
+  color: #22b1e2;
+  border-color: #22b1e2;
+}
+div.nsc.input[color=blue]:hover svg {
+  fill: #22b1e2;
+}
+div.nsc.input[color=blue]:active, div.nsc.input[color=blue]:focus-within, div.nsc.input[color=blue]:focus {
+  color: #157ea2;
+  border-color: #157ea2;
+}
+div.nsc.input[color=blue]:active svg, div.nsc.input[color=blue]:focus-within svg, div.nsc.input[color=blue]:focus svg {
+  fill: #157ea2;
+}
+div.nsc.input[color=purple] {
+  color: #ac92eb;
+  border-color: #ac92eb;
+}
+div.nsc.input[color=purple] svg {
+  fill: #ac92eb;
+}
+div.nsc.input[color=purple]:hover {
+  color: #8b67e3;
+  border-color: #8b67e3;
+}
+div.nsc.input[color=purple]:hover svg {
+  fill: #8b67e3;
+}
+div.nsc.input[color=purple]:active, div.nsc.input[color=purple]:focus-within, div.nsc.input[color=purple]:focus {
+  color: #5a27d6;
+  border-color: #5a27d6;
+}
+div.nsc.input[color=purple]:active svg, div.nsc.input[color=purple]:focus-within svg, div.nsc.input[color=purple]:focus svg {
+  fill: #5a27d6;
+}
+div.nsc.input[color=warning] {
+  color: #f8de6b;
+  border-color: #f8de6b;
+}
+div.nsc.input[color=warning] svg {
+  fill: #f8de6b;
+}
+div.nsc.input[color=warning]:hover {
+  color: #f6d33a;
+  border-color: #f6d33a;
+}
+div.nsc.input[color=warning]:hover svg {
+  fill: #f6d33a;
+}
+div.nsc.input[color=warning]:active, div.nsc.input[color=warning]:focus-within, div.nsc.input[color=warning]:focus {
+  color: #d9b30a;
+  border-color: #d9b30a;
+}
+div.nsc.input[color=warning]:active svg, div.nsc.input[color=warning]:focus-within svg, div.nsc.input[color=warning]:focus svg {
+  fill: #d9b30a;
+}
+div.nsc.input[color=error] {
+  color: #eb6383;
+  border-color: #eb6383;
+}
+div.nsc.input[color=error] svg {
+  fill: #eb6383;
+}
+div.nsc.input[color=error]:hover {
+  color: #e5365f;
+  border-color: #e5365f;
+}
+div.nsc.input[color=error]:hover svg {
+  fill: #e5365f;
+}
+div.nsc.input[color=error]:active, div.nsc.input[color=error]:focus-within, div.nsc.input[color=error]:focus {
+  color: #b7173d;
+  border-color: #b7173d;
+}
+div.nsc.input[color=error]:active svg, div.nsc.input[color=error]:focus-within svg, div.nsc.input[color=error]:focus svg {
+  fill: #b7173d;
+}
+div.nsc.input[color=default] {
+  color: #ebebeb;
+  border-color: #ebebeb;
+}
+div.nsc.input[color=default] svg {
+  fill: #ebebeb;
+}
+div.nsc.input[color=default]:hover {
+  color: #d2d2d2;
+  border-color: #d2d2d2;
+}
+div.nsc.input[color=default]:hover svg {
+  fill: #d2d2d2;
+}
+div.nsc.input[color=default]:active, div.nsc.input[color=default]:focus-within, div.nsc.input[color=default]:focus {
+  color: #ababab;
+  border-color: #ababab;
+}
+div.nsc.input[color=default]:active svg, div.nsc.input[color=default]:focus-within svg, div.nsc.input[color=default]:focus svg {
+  fill: #ababab;
+}
+div.nsc.input[color=success] {
+  color: #90ec90;
+  border-color: #90ec90;
+}
+div.nsc.input[color=success] svg {
+  fill: #90ec90;
+}
+div.nsc.input[color=success]:hover {
+  color: #64e564;
+  border-color: #64e564;
+}
+div.nsc.input[color=success]:hover svg {
+  fill: #64e564;
+}
+div.nsc.input[color=success]:active, div.nsc.input[color=success]:focus-within, div.nsc.input[color=success]:focus {
+  color: #25d825;
+  border-color: #25d825;
+}
+div.nsc.input[color=success]:active svg, div.nsc.input[color=success]:focus-within svg, div.nsc.input[color=success]:focus svg {
+  fill: #25d825;
+}
+div.nsc.input[error], div.nsc.input[warning] {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  pointer-events: none;
+  padding: 0 !important;
+  border: none !important;
+}
+div.nsc.input[error] div.nsc.error {
+  border: 0.15rem solid #eb6383;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  color: #eb6383;
+  font-weight: bold;
+}
+div.nsc.input[warning] div.nsc.warning {
+  border: 0.15rem solid #f8de6b;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  color: #f8de6b;
+  font-weight: bold;
+}
+div.nsc.input[type=checkbox] {
+  padding: 0 !important;
+}
+div.nsc.input[type=checkbox] div.nsc.checkbox-display {
+  width: 100%;
+  height: 100%;
+  min-width: 0.8rem;
+  min-height: 0.8rem;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+div.nsc.input[type=checkbox] div.nsc.checkbox-display svg {
+  opacity: 0;
+  min-width: 1rem;
+  min-height: 1rem;
+}
+div.nsc.input[type=checkbox] div.nsc.checkbox-display.checked svg {
+  opacity: 1;
+}
+div.nsc.input input {
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: inherit;
+}
+div.nsc.input input::placeholder, div.nsc.input input::-webkit-calendar-picker-indicator {
+  color: #ebebeb;
+}
+div.nsc.input input[type=button], div.nsc.input input[type=checkbox] {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

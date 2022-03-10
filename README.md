@@ -103,6 +103,7 @@ return <Button>Text/Children Here</Button>;
 | `underline` | `true` / `false`                                              | Makes the button's border an underline only. **_Must be a hollow button!_**        |
 | `fill`      | `true` / `false`                                              | Makes the button fill all available horizontal space.                              |
 | `compact`   | `true` / `false`                                              | Makes the button's padding and font smaller so that it can fit in a smaller space. |
+| `noborder`  | `true` / `false`                                              | Turns off the button's border.                                                     |
 
 ---
 
@@ -404,6 +405,4 @@ Instead of the default, the above example will make each page number button disp
 
 ---
 
-```
-
-```
+### Input

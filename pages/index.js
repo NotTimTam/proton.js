@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
-import { Button, Pagination, ProgressBar } from "../nextjs-simple-components";
+import {
+	Button,
+	Input,
+	Pagination,
+	ProgressBar,
+} from "../nextjs-simple-components";
 import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 
 export default function Home() {
-	const [page, setPage] = useState(1);
-	const [totalPages, setTotalPages] = useState(10);
-	const [loading, setLoading] = useState(false);
-
-	useEffect(() => {
-		console.log("page change", page);
-	}, [page]);
+	const [checkbox, setCheckbox] = useState(false);
+	const [passwordHidden, setPasswordHidden] = useState(true);
+	const toggle = () => {
+		setCheckbox(!checkbox);
+		console.log("toggling clientside");
+	};
 
 	return (
 		<div
@@ -18,36 +22,50 @@ export default function Home() {
 				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "center",
-				height: "100vh",
 			}}
 		>
-			<Pagination
-				jumpArrows
-				arrows
-				// emphasis="primary"
-				loading={loading}
-				activePage={page}
-				totalPages={totalPages}
+			<Input color="red" type="button" />
+			<Input color="orange" type="text" placeholder="lolol" />
+			<Input
+				color="yellow"
+				type="checkbox"
+				checked={checkbox}
+				onToggle={toggle}
+			/>
+			<Input color="red" type="email" />
+			<Input
 				color="red"
-				// boundaryRange={1}
-				onPageChange={(page) => {
-					if (page > totalPages) {
-						setPage(0);
-						return;
-					}
-					setPage(page);
+				type="password"
+				visible={!passwordHidden}
+				onToggle={() => {
+					setPasswordHidden(!passwordHidden);
+					console.log("toggled if password was hidden");
 				}}
 			/>
-			<ProgressBar border overlay min={0} max={totalPages} value={page}>
-				{[...Array(totalPages)].map((item) => (
-					<>
-						<ProgressBar.Spacer />
-						<ProgressBar.Label>
-							<ProgressBar.Dot hollow />
-						</ProgressBar.Label>
-					</>
-				))}
-			</ProgressBar>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+			<Input color="green" type="color" />
+			<Input color="blue" type="date" />
+			<Input color="purple" type="datetime-local" />
+			<Input color="orange" type="file" />
+			<Input color="yellow" type="hidden" />
+			<Input color="green" type="image" />
+			<Input color="blue" type="month" />
+			<Input color="purple" type="number" />
+			<Input color="orange" type="radio" />
+			<Input color="yellow" type="range" />
+			<Input color="green" type="reset" />
+			<Input color="blue" type="search" />
+			<Input color="purple" type="submit" />
+			<Input color="red" type="tel" />
+			<Input color="orange" type="time" />
+			<Input color="yellow" type="url" />
+			<Input color="green" type="week" />
 		</div>
 	);
 }
