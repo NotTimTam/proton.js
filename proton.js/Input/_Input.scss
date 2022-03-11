@@ -1,0 +1,276 @@
+@use "../styles/vars" as *;
+
+div.proton.input {
+	// Box
+	// padding: $padding;
+	margin: $margin;
+	border: $border-width $border-style $border-color;
+	border-radius: $border-radius;
+
+	// Flexbox
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: $padding;
+
+	// Text
+	font-size: $font-p;
+	font-weight: $font-weight;
+	color: $text-color;
+
+	// States
+	transition: $transition-fast;
+	svg.proton.input-icon,
+	&[type="checkbox"] div.proton.checkbox-display,
+	&[type="radio"] div.proton.radio-display {
+		transition: $transition-fast;
+	}
+
+	// Emphasis
+	@each $key, $value in $emphasis {
+		&[emphasis="#{$key}"] {
+			color: $value;
+			border-color: $value;
+
+			svg.proton.input-icon {
+				fill: $value;
+			}
+
+			&[type="radio"] div.proton.radio-display.checked {
+				background: $value;
+			}
+
+			&:hover {
+				color: darken($value, 10%);
+				border-color: darken($value, 10%);
+
+				svg.proton.input-icon {
+					fill: darken($value, 10%);
+				}
+
+				&[type="radio"] div.proton.radio-display.checked {
+					background: darken($value, 10%);
+				}
+			}
+
+			&:active,
+			&:focus-within,
+			&:focus {
+				color: darken($value, 25%);
+				border-color: darken($value, 25%);
+
+				svg.proton.input-icon {
+					fill: darken($value, 25%);
+				}
+
+				&[type="radio"] div.proton.radio-display.checked {
+					background: darken($value, 25%);
+				}
+			}
+		}
+	}
+
+	// Color
+	@each $key, $value in $colors {
+		&[color="#{$key}"] {
+			color: $value;
+			border-color: $value;
+
+			svg.proton.input-icon {
+				fill: $value;
+			}
+
+			&[type="radio"] div.proton.radio-display.checked {
+				background: $value;
+			}
+
+			&:hover {
+				color: darken($value, 10%);
+				border-color: darken($value, 10%);
+
+				svg.proton.input-icon {
+					fill: darken($value, 10%);
+				}
+
+				&[type="radio"] div.proton.radio-display.checked {
+					background: darken($value, 10%);
+				}
+			}
+
+			&:active,
+			&:focus-within,
+			&:focus {
+				color: darken($value, 25%);
+				border-color: darken($value, 25%);
+
+				svg.proton.input-icon {
+					fill: darken($value, 25%);
+				}
+
+				&[type="radio"] div.proton.radio-display.checked {
+					background: darken($value, 25%);
+				}
+			}
+		}
+	}
+
+	// Errors and Warnings
+	&[error],
+	&[warning] {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+		pointer-events: none;
+		// padding: 0 !important;
+		border: none !important;
+	}
+	&[error] {
+		div.proton.error {
+			border: $border-width $border-style map-get($colors, "error");
+			border-radius: $border-radius;
+			padding: $padding;
+			color: map-get($colors, "error");
+			font-weight: bold;
+		}
+	}
+	&[warning] {
+		div.proton.warning {
+			border: $border-width $border-style map-get($colors, "warning");
+			border-radius: $border-radius;
+			padding: $padding;
+			color: map-get($colors, "warning");
+			font-weight: bold;
+		}
+	}
+
+	// Checkbox and Radio
+	&[type="radio"] {
+		border-radius: $border-radius-icon-circular;
+	}
+	&[type="checkbox"],
+	&[type="radio"] {
+		// padding: 0 !important;
+
+		div.proton.checkbox-display {
+			// Box
+			width: 100%;
+			height: 100%;
+			min-width: 0.8rem;
+			min-height: 0.8rem;
+			padding: calc($padding / 2);
+
+			// Flexbox
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+
+			// SVGs
+			svg {
+				opacity: 0;
+				min-width: 1rem;
+				min-height: 1rem;
+			}
+
+			// If checked
+			&.checked {
+				svg {
+					opacity: 1;
+				}
+			}
+		}
+
+		div.proton.radio-display {
+			// Box
+			width: 100%;
+			height: 100%;
+			min-width: 0.8rem;
+			min-height: 0.8rem;
+			margin: calc($padding / 2);
+			border-radius: $border-radius-icon-circular;
+
+			// Flexbox
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+
+			// Checked
+			opacity: 0;
+			&.checked {
+				opacity: 1;
+			}
+		}
+	}
+
+	// Number
+	&[type="number"] {
+		// Flexbox
+		gap: 0;
+
+		// Input
+		input {
+			-moz-appearance: textfield;
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				display: none;
+				margin: 0;
+			}
+
+			text-align: center;
+
+			backface-visibility: hidden;
+
+			max-width: 5rem;
+		}
+
+		// Buttons
+		button.proton.button {
+			margin: 0;
+			border-radius: 0;
+			align-self: stretch;
+
+			svg {
+				min-width: 1.5rem;
+				min-height: 1.5rem;
+			}
+		}
+	}
+
+	// Other Inputs
+	input,
+	&[type="number"] div.proton.number-display {
+		// Reset
+		border: none;
+		background: none;
+		margin: 0;
+		padding: $padding;
+		outline: none;
+
+		// Transition
+		transition: $transition-fast;
+
+		// Text
+		font-family: $font-family;
+		font-size: $font-p;
+		font-weight: $font-weight;
+		color: inherit;
+
+		// Placeholder
+		&::placeholder,
+		&::-webkit-calendar-picker-indicator {
+			color: map-get($colors, "default");
+		}
+
+		// Types that should be hidden.
+		&[type="button"],
+		&[type="checkbox"] {
+			display: none;
+		}
+
+		// Text
+		&[type="text"] {
+		}
+	}
+}
