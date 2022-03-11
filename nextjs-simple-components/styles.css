@@ -1600,7 +1600,6 @@ div.nsc.progress-bar div.nsc.overlay[backline]::after {
 }
 
 div.nsc.input {
-  padding: 0.5rem;
   margin: 0.5rem;
   border: 0.15rem solid #ebebeb;
   border-radius: 0.25rem;
@@ -1614,350 +1613,493 @@ div.nsc.input {
   color: black;
   transition: all 0.15s ease-in-out;
 }
-div.nsc.input svg, div.nsc.input[type=checkbox] div.nsc.checkbox-display {
+div.nsc.input svg.nsc.input-icon, div.nsc.input[type=checkbox] div.nsc.checkbox-display, div.nsc.input[type=radio] div.nsc.radio-display {
   transition: all 0.15s ease-in-out;
 }
 div.nsc.input[emphasis=primary] {
   color: #2f2f97;
   border-color: #2f2f97;
 }
-div.nsc.input[emphasis=primary] svg {
+div.nsc.input[emphasis=primary] svg.nsc.input-icon {
   fill: #2f2f97;
+}
+div.nsc.input[emphasis=primary][type=radio] div.nsc.radio-display.checked {
+  background: #2f2f97;
 }
 div.nsc.input[emphasis=primary]:hover {
   color: #232370;
   border-color: #232370;
 }
-div.nsc.input[emphasis=primary]:hover svg {
+div.nsc.input[emphasis=primary]:hover svg.nsc.input-icon {
   fill: #232370;
+}
+div.nsc.input[emphasis=primary]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #232370;
 }
 div.nsc.input[emphasis=primary]:active, div.nsc.input[emphasis=primary]:focus-within, div.nsc.input[emphasis=primary]:focus {
   color: #111136;
   border-color: #111136;
 }
-div.nsc.input[emphasis=primary]:active svg, div.nsc.input[emphasis=primary]:focus-within svg, div.nsc.input[emphasis=primary]:focus svg {
+div.nsc.input[emphasis=primary]:active svg.nsc.input-icon, div.nsc.input[emphasis=primary]:focus-within svg.nsc.input-icon, div.nsc.input[emphasis=primary]:focus svg.nsc.input-icon {
   fill: #111136;
+}
+div.nsc.input[emphasis=primary]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=primary]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=primary]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #111136;
 }
 div.nsc.input[emphasis=primary-text] {
   color: white;
   border-color: white;
 }
-div.nsc.input[emphasis=primary-text] svg {
+div.nsc.input[emphasis=primary-text] svg.nsc.input-icon {
   fill: white;
+}
+div.nsc.input[emphasis=primary-text][type=radio] div.nsc.radio-display.checked {
+  background: white;
 }
 div.nsc.input[emphasis=primary-text]:hover {
   color: #e6e6e6;
   border-color: #e6e6e6;
 }
-div.nsc.input[emphasis=primary-text]:hover svg {
+div.nsc.input[emphasis=primary-text]:hover svg.nsc.input-icon {
   fill: #e6e6e6;
+}
+div.nsc.input[emphasis=primary-text]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #e6e6e6;
 }
 div.nsc.input[emphasis=primary-text]:active, div.nsc.input[emphasis=primary-text]:focus-within, div.nsc.input[emphasis=primary-text]:focus {
   color: #bfbfbf;
   border-color: #bfbfbf;
 }
-div.nsc.input[emphasis=primary-text]:active svg, div.nsc.input[emphasis=primary-text]:focus-within svg, div.nsc.input[emphasis=primary-text]:focus svg {
+div.nsc.input[emphasis=primary-text]:active svg.nsc.input-icon, div.nsc.input[emphasis=primary-text]:focus-within svg.nsc.input-icon, div.nsc.input[emphasis=primary-text]:focus svg.nsc.input-icon {
   fill: #bfbfbf;
+}
+div.nsc.input[emphasis=primary-text]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=primary-text]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=primary-text]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #bfbfbf;
 }
 div.nsc.input[emphasis=secondary] {
   color: #a1a2a7;
   border-color: #a1a2a7;
 }
-div.nsc.input[emphasis=secondary] svg {
+div.nsc.input[emphasis=secondary] svg.nsc.input-icon {
   fill: #a1a2a7;
+}
+div.nsc.input[emphasis=secondary][type=radio] div.nsc.radio-display.checked {
+  background: #a1a2a7;
 }
 div.nsc.input[emphasis=secondary]:hover {
   color: #87888e;
   border-color: #87888e;
 }
-div.nsc.input[emphasis=secondary]:hover svg {
+div.nsc.input[emphasis=secondary]:hover svg.nsc.input-icon {
   fill: #87888e;
+}
+div.nsc.input[emphasis=secondary]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #87888e;
 }
 div.nsc.input[emphasis=secondary]:active, div.nsc.input[emphasis=secondary]:focus-within, div.nsc.input[emphasis=secondary]:focus {
   color: #616268;
   border-color: #616268;
 }
-div.nsc.input[emphasis=secondary]:active svg, div.nsc.input[emphasis=secondary]:focus-within svg, div.nsc.input[emphasis=secondary]:focus svg {
+div.nsc.input[emphasis=secondary]:active svg.nsc.input-icon, div.nsc.input[emphasis=secondary]:focus-within svg.nsc.input-icon, div.nsc.input[emphasis=secondary]:focus svg.nsc.input-icon {
   fill: #616268;
+}
+div.nsc.input[emphasis=secondary]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=secondary]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=secondary]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #616268;
 }
 div.nsc.input[emphasis=secondary-text] {
   color: white;
   border-color: white;
 }
-div.nsc.input[emphasis=secondary-text] svg {
+div.nsc.input[emphasis=secondary-text] svg.nsc.input-icon {
   fill: white;
+}
+div.nsc.input[emphasis=secondary-text][type=radio] div.nsc.radio-display.checked {
+  background: white;
 }
 div.nsc.input[emphasis=secondary-text]:hover {
   color: #e6e6e6;
   border-color: #e6e6e6;
 }
-div.nsc.input[emphasis=secondary-text]:hover svg {
+div.nsc.input[emphasis=secondary-text]:hover svg.nsc.input-icon {
   fill: #e6e6e6;
+}
+div.nsc.input[emphasis=secondary-text]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #e6e6e6;
 }
 div.nsc.input[emphasis=secondary-text]:active, div.nsc.input[emphasis=secondary-text]:focus-within, div.nsc.input[emphasis=secondary-text]:focus {
   color: #bfbfbf;
   border-color: #bfbfbf;
 }
-div.nsc.input[emphasis=secondary-text]:active svg, div.nsc.input[emphasis=secondary-text]:focus-within svg, div.nsc.input[emphasis=secondary-text]:focus svg {
+div.nsc.input[emphasis=secondary-text]:active svg.nsc.input-icon, div.nsc.input[emphasis=secondary-text]:focus-within svg.nsc.input-icon, div.nsc.input[emphasis=secondary-text]:focus svg.nsc.input-icon {
   fill: #bfbfbf;
+}
+div.nsc.input[emphasis=secondary-text]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=secondary-text]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=secondary-text]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #bfbfbf;
 }
 div.nsc.input[emphasis=default] {
   color: #ebebeb;
   border-color: #ebebeb;
 }
-div.nsc.input[emphasis=default] svg {
+div.nsc.input[emphasis=default] svg.nsc.input-icon {
   fill: #ebebeb;
+}
+div.nsc.input[emphasis=default][type=radio] div.nsc.radio-display.checked {
+  background: #ebebeb;
 }
 div.nsc.input[emphasis=default]:hover {
   color: #d2d2d2;
   border-color: #d2d2d2;
 }
-div.nsc.input[emphasis=default]:hover svg {
+div.nsc.input[emphasis=default]:hover svg.nsc.input-icon {
   fill: #d2d2d2;
+}
+div.nsc.input[emphasis=default]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #d2d2d2;
 }
 div.nsc.input[emphasis=default]:active, div.nsc.input[emphasis=default]:focus-within, div.nsc.input[emphasis=default]:focus {
   color: #ababab;
   border-color: #ababab;
 }
-div.nsc.input[emphasis=default]:active svg, div.nsc.input[emphasis=default]:focus-within svg, div.nsc.input[emphasis=default]:focus svg {
+div.nsc.input[emphasis=default]:active svg.nsc.input-icon, div.nsc.input[emphasis=default]:focus-within svg.nsc.input-icon, div.nsc.input[emphasis=default]:focus svg.nsc.input-icon {
   fill: #ababab;
+}
+div.nsc.input[emphasis=default]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=default]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=default]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #ababab;
 }
 div.nsc.input[emphasis=default-text] {
   color: black;
   border-color: black;
 }
-div.nsc.input[emphasis=default-text] svg {
+div.nsc.input[emphasis=default-text] svg.nsc.input-icon {
   fill: black;
+}
+div.nsc.input[emphasis=default-text][type=radio] div.nsc.radio-display.checked {
+  background: black;
 }
 div.nsc.input[emphasis=default-text]:hover {
   color: black;
   border-color: black;
 }
-div.nsc.input[emphasis=default-text]:hover svg {
+div.nsc.input[emphasis=default-text]:hover svg.nsc.input-icon {
   fill: black;
+}
+div.nsc.input[emphasis=default-text]:hover[type=radio] div.nsc.radio-display.checked {
+  background: black;
 }
 div.nsc.input[emphasis=default-text]:active, div.nsc.input[emphasis=default-text]:focus-within, div.nsc.input[emphasis=default-text]:focus {
   color: black;
   border-color: black;
 }
-div.nsc.input[emphasis=default-text]:active svg, div.nsc.input[emphasis=default-text]:focus-within svg, div.nsc.input[emphasis=default-text]:focus svg {
+div.nsc.input[emphasis=default-text]:active svg.nsc.input-icon, div.nsc.input[emphasis=default-text]:focus-within svg.nsc.input-icon, div.nsc.input[emphasis=default-text]:focus svg.nsc.input-icon {
   fill: black;
+}
+div.nsc.input[emphasis=default-text]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=default-text]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[emphasis=default-text]:focus[type=radio] div.nsc.radio-display.checked {
+  background: black;
 }
 div.nsc.input[color=red] {
   color: #ed5564;
   border-color: #ed5564;
 }
-div.nsc.input[color=red] svg {
+div.nsc.input[color=red] svg.nsc.input-icon {
   fill: #ed5564;
+}
+div.nsc.input[color=red][type=radio] div.nsc.radio-display.checked {
+  background: #ed5564;
 }
 div.nsc.input[color=red]:hover {
   color: #e8273a;
   border-color: #e8273a;
 }
-div.nsc.input[color=red]:hover svg {
+div.nsc.input[color=red]:hover svg.nsc.input-icon {
   fill: #e8273a;
+}
+div.nsc.input[color=red]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #e8273a;
 }
 div.nsc.input[color=red]:active, div.nsc.input[color=red]:focus-within, div.nsc.input[color=red]:focus {
   color: #b01322;
   border-color: #b01322;
 }
-div.nsc.input[color=red]:active svg, div.nsc.input[color=red]:focus-within svg, div.nsc.input[color=red]:focus svg {
+div.nsc.input[color=red]:active svg.nsc.input-icon, div.nsc.input[color=red]:focus-within svg.nsc.input-icon, div.nsc.input[color=red]:focus svg.nsc.input-icon {
   fill: #b01322;
+}
+div.nsc.input[color=red]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=red]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=red]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #b01322;
 }
 div.nsc.input[color=orange] {
   color: #f1b037;
   border-color: #f1b037;
 }
-div.nsc.input[color=orange] svg {
+div.nsc.input[color=orange] svg.nsc.input-icon {
   fill: #f1b037;
+}
+div.nsc.input[color=orange][type=radio] div.nsc.radio-display.checked {
+  background: #f1b037;
 }
 div.nsc.input[color=orange]:hover {
   color: #e59b10;
   border-color: #e59b10;
 }
-div.nsc.input[color=orange]:hover svg {
+div.nsc.input[color=orange]:hover svg.nsc.input-icon {
   fill: #e59b10;
+}
+div.nsc.input[color=orange]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #e59b10;
 }
 div.nsc.input[color=orange]:active, div.nsc.input[color=orange]:focus-within, div.nsc.input[color=orange]:focus {
   color: #9d6a0b;
   border-color: #9d6a0b;
 }
-div.nsc.input[color=orange]:active svg, div.nsc.input[color=orange]:focus-within svg, div.nsc.input[color=orange]:focus svg {
+div.nsc.input[color=orange]:active svg.nsc.input-icon, div.nsc.input[color=orange]:focus-within svg.nsc.input-icon, div.nsc.input[color=orange]:focus svg.nsc.input-icon {
   fill: #9d6a0b;
+}
+div.nsc.input[color=orange]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=orange]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=orange]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #9d6a0b;
 }
 div.nsc.input[color=yellow] {
   color: #ffce54;
   border-color: #ffce54;
 }
-div.nsc.input[color=yellow] svg {
+div.nsc.input[color=yellow] svg.nsc.input-icon {
   fill: #ffce54;
+}
+div.nsc.input[color=yellow][type=radio] div.nsc.radio-display.checked {
+  background: #ffce54;
 }
 div.nsc.input[color=yellow]:hover {
   color: #ffbf21;
   border-color: #ffbf21;
 }
-div.nsc.input[color=yellow]:hover svg {
+div.nsc.input[color=yellow]:hover svg.nsc.input-icon {
   fill: #ffbf21;
+}
+div.nsc.input[color=yellow]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #ffbf21;
 }
 div.nsc.input[color=yellow]:active, div.nsc.input[color=yellow]:focus-within, div.nsc.input[color=yellow]:focus {
   color: #d49700;
   border-color: #d49700;
 }
-div.nsc.input[color=yellow]:active svg, div.nsc.input[color=yellow]:focus-within svg, div.nsc.input[color=yellow]:focus svg {
+div.nsc.input[color=yellow]:active svg.nsc.input-icon, div.nsc.input[color=yellow]:focus-within svg.nsc.input-icon, div.nsc.input[color=yellow]:focus svg.nsc.input-icon {
   fill: #d49700;
+}
+div.nsc.input[color=yellow]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=yellow]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=yellow]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #d49700;
 }
 div.nsc.input[color=green] {
   color: #a0d568;
   border-color: #a0d568;
 }
-div.nsc.input[color=green] svg {
+div.nsc.input[color=green] svg.nsc.input-icon {
   fill: #a0d568;
+}
+div.nsc.input[color=green][type=radio] div.nsc.radio-display.checked {
+  background: #a0d568;
 }
 div.nsc.input[color=green]:hover {
   color: #87ca40;
   border-color: #87ca40;
 }
-div.nsc.input[color=green]:hover svg {
+div.nsc.input[color=green]:hover svg.nsc.input-icon {
   fill: #87ca40;
+}
+div.nsc.input[color=green]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #87ca40;
 }
 div.nsc.input[color=green]:active, div.nsc.input[color=green]:focus-within, div.nsc.input[color=green]:focus {
   color: #609429;
   border-color: #609429;
 }
-div.nsc.input[color=green]:active svg, div.nsc.input[color=green]:focus-within svg, div.nsc.input[color=green]:focus svg {
+div.nsc.input[color=green]:active svg.nsc.input-icon, div.nsc.input[color=green]:focus-within svg.nsc.input-icon, div.nsc.input[color=green]:focus svg.nsc.input-icon {
   fill: #609429;
+}
+div.nsc.input[color=green]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=green]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=green]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #609429;
 }
 div.nsc.input[color=blue] {
   color: #4fc1e8;
   border-color: #4fc1e8;
 }
-div.nsc.input[color=blue] svg {
+div.nsc.input[color=blue] svg.nsc.input-icon {
   fill: #4fc1e8;
+}
+div.nsc.input[color=blue][type=radio] div.nsc.radio-display.checked {
+  background: #4fc1e8;
 }
 div.nsc.input[color=blue]:hover {
   color: #22b1e2;
   border-color: #22b1e2;
 }
-div.nsc.input[color=blue]:hover svg {
+div.nsc.input[color=blue]:hover svg.nsc.input-icon {
   fill: #22b1e2;
+}
+div.nsc.input[color=blue]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #22b1e2;
 }
 div.nsc.input[color=blue]:active, div.nsc.input[color=blue]:focus-within, div.nsc.input[color=blue]:focus {
   color: #157ea2;
   border-color: #157ea2;
 }
-div.nsc.input[color=blue]:active svg, div.nsc.input[color=blue]:focus-within svg, div.nsc.input[color=blue]:focus svg {
+div.nsc.input[color=blue]:active svg.nsc.input-icon, div.nsc.input[color=blue]:focus-within svg.nsc.input-icon, div.nsc.input[color=blue]:focus svg.nsc.input-icon {
   fill: #157ea2;
+}
+div.nsc.input[color=blue]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=blue]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=blue]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #157ea2;
 }
 div.nsc.input[color=purple] {
   color: #ac92eb;
   border-color: #ac92eb;
 }
-div.nsc.input[color=purple] svg {
+div.nsc.input[color=purple] svg.nsc.input-icon {
   fill: #ac92eb;
+}
+div.nsc.input[color=purple][type=radio] div.nsc.radio-display.checked {
+  background: #ac92eb;
 }
 div.nsc.input[color=purple]:hover {
   color: #8b67e3;
   border-color: #8b67e3;
 }
-div.nsc.input[color=purple]:hover svg {
+div.nsc.input[color=purple]:hover svg.nsc.input-icon {
   fill: #8b67e3;
+}
+div.nsc.input[color=purple]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #8b67e3;
 }
 div.nsc.input[color=purple]:active, div.nsc.input[color=purple]:focus-within, div.nsc.input[color=purple]:focus {
   color: #5a27d6;
   border-color: #5a27d6;
 }
-div.nsc.input[color=purple]:active svg, div.nsc.input[color=purple]:focus-within svg, div.nsc.input[color=purple]:focus svg {
+div.nsc.input[color=purple]:active svg.nsc.input-icon, div.nsc.input[color=purple]:focus-within svg.nsc.input-icon, div.nsc.input[color=purple]:focus svg.nsc.input-icon {
   fill: #5a27d6;
+}
+div.nsc.input[color=purple]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=purple]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=purple]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #5a27d6;
 }
 div.nsc.input[color=warning] {
   color: #f8de6b;
   border-color: #f8de6b;
 }
-div.nsc.input[color=warning] svg {
+div.nsc.input[color=warning] svg.nsc.input-icon {
   fill: #f8de6b;
+}
+div.nsc.input[color=warning][type=radio] div.nsc.radio-display.checked {
+  background: #f8de6b;
 }
 div.nsc.input[color=warning]:hover {
   color: #f6d33a;
   border-color: #f6d33a;
 }
-div.nsc.input[color=warning]:hover svg {
+div.nsc.input[color=warning]:hover svg.nsc.input-icon {
   fill: #f6d33a;
+}
+div.nsc.input[color=warning]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #f6d33a;
 }
 div.nsc.input[color=warning]:active, div.nsc.input[color=warning]:focus-within, div.nsc.input[color=warning]:focus {
   color: #d9b30a;
   border-color: #d9b30a;
 }
-div.nsc.input[color=warning]:active svg, div.nsc.input[color=warning]:focus-within svg, div.nsc.input[color=warning]:focus svg {
+div.nsc.input[color=warning]:active svg.nsc.input-icon, div.nsc.input[color=warning]:focus-within svg.nsc.input-icon, div.nsc.input[color=warning]:focus svg.nsc.input-icon {
   fill: #d9b30a;
+}
+div.nsc.input[color=warning]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=warning]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=warning]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #d9b30a;
 }
 div.nsc.input[color=error] {
   color: #eb6383;
   border-color: #eb6383;
 }
-div.nsc.input[color=error] svg {
+div.nsc.input[color=error] svg.nsc.input-icon {
   fill: #eb6383;
+}
+div.nsc.input[color=error][type=radio] div.nsc.radio-display.checked {
+  background: #eb6383;
 }
 div.nsc.input[color=error]:hover {
   color: #e5365f;
   border-color: #e5365f;
 }
-div.nsc.input[color=error]:hover svg {
+div.nsc.input[color=error]:hover svg.nsc.input-icon {
   fill: #e5365f;
+}
+div.nsc.input[color=error]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #e5365f;
 }
 div.nsc.input[color=error]:active, div.nsc.input[color=error]:focus-within, div.nsc.input[color=error]:focus {
   color: #b7173d;
   border-color: #b7173d;
 }
-div.nsc.input[color=error]:active svg, div.nsc.input[color=error]:focus-within svg, div.nsc.input[color=error]:focus svg {
+div.nsc.input[color=error]:active svg.nsc.input-icon, div.nsc.input[color=error]:focus-within svg.nsc.input-icon, div.nsc.input[color=error]:focus svg.nsc.input-icon {
   fill: #b7173d;
+}
+div.nsc.input[color=error]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=error]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=error]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #b7173d;
 }
 div.nsc.input[color=default] {
   color: #ebebeb;
   border-color: #ebebeb;
 }
-div.nsc.input[color=default] svg {
+div.nsc.input[color=default] svg.nsc.input-icon {
   fill: #ebebeb;
+}
+div.nsc.input[color=default][type=radio] div.nsc.radio-display.checked {
+  background: #ebebeb;
 }
 div.nsc.input[color=default]:hover {
   color: #d2d2d2;
   border-color: #d2d2d2;
 }
-div.nsc.input[color=default]:hover svg {
+div.nsc.input[color=default]:hover svg.nsc.input-icon {
   fill: #d2d2d2;
+}
+div.nsc.input[color=default]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #d2d2d2;
 }
 div.nsc.input[color=default]:active, div.nsc.input[color=default]:focus-within, div.nsc.input[color=default]:focus {
   color: #ababab;
   border-color: #ababab;
 }
-div.nsc.input[color=default]:active svg, div.nsc.input[color=default]:focus-within svg, div.nsc.input[color=default]:focus svg {
+div.nsc.input[color=default]:active svg.nsc.input-icon, div.nsc.input[color=default]:focus-within svg.nsc.input-icon, div.nsc.input[color=default]:focus svg.nsc.input-icon {
   fill: #ababab;
+}
+div.nsc.input[color=default]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=default]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=default]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #ababab;
 }
 div.nsc.input[color=success] {
   color: #90ec90;
   border-color: #90ec90;
 }
-div.nsc.input[color=success] svg {
+div.nsc.input[color=success] svg.nsc.input-icon {
   fill: #90ec90;
+}
+div.nsc.input[color=success][type=radio] div.nsc.radio-display.checked {
+  background: #90ec90;
 }
 div.nsc.input[color=success]:hover {
   color: #64e564;
   border-color: #64e564;
 }
-div.nsc.input[color=success]:hover svg {
+div.nsc.input[color=success]:hover svg.nsc.input-icon {
   fill: #64e564;
+}
+div.nsc.input[color=success]:hover[type=radio] div.nsc.radio-display.checked {
+  background: #64e564;
 }
 div.nsc.input[color=success]:active, div.nsc.input[color=success]:focus-within, div.nsc.input[color=success]:focus {
   color: #25d825;
   border-color: #25d825;
 }
-div.nsc.input[color=success]:active svg, div.nsc.input[color=success]:focus-within svg, div.nsc.input[color=success]:focus svg {
+div.nsc.input[color=success]:active svg.nsc.input-icon, div.nsc.input[color=success]:focus-within svg.nsc.input-icon, div.nsc.input[color=success]:focus svg.nsc.input-icon {
   fill: #25d825;
+}
+div.nsc.input[color=success]:active[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=success]:focus-within[type=radio] div.nsc.radio-display.checked, div.nsc.input[color=success]:focus[type=radio] div.nsc.radio-display.checked {
+  background: #25d825;
 }
 div.nsc.input[error], div.nsc.input[warning] {
   flex-direction: column !important;
   align-items: flex-start !important;
   pointer-events: none;
-  padding: 0 !important;
   border: none !important;
 }
 div.nsc.input[error] div.nsc.error {
@@ -1974,10 +2116,10 @@ div.nsc.input[warning] div.nsc.warning {
   color: #f8de6b;
   font-weight: bold;
 }
-div.nsc.input[type=checkbox] {
-  padding: 0 !important;
+div.nsc.input[type=radio] {
+  border-radius: 50%;
 }
-div.nsc.input[type=checkbox] div.nsc.checkbox-display {
+div.nsc.input[type=checkbox] div.nsc.checkbox-display, div.nsc.input[type=radio] div.nsc.checkbox-display {
   width: 100%;
   height: 100%;
   min-width: 0.8rem;
@@ -1988,19 +2130,59 @@ div.nsc.input[type=checkbox] div.nsc.checkbox-display {
   align-items: center;
   justify-content: center;
 }
-div.nsc.input[type=checkbox] div.nsc.checkbox-display svg {
+div.nsc.input[type=checkbox] div.nsc.checkbox-display svg, div.nsc.input[type=radio] div.nsc.checkbox-display svg {
   opacity: 0;
   min-width: 1rem;
   min-height: 1rem;
 }
-div.nsc.input[type=checkbox] div.nsc.checkbox-display.checked svg {
+div.nsc.input[type=checkbox] div.nsc.checkbox-display.checked svg, div.nsc.input[type=radio] div.nsc.checkbox-display.checked svg {
   opacity: 1;
 }
-div.nsc.input input {
+div.nsc.input[type=checkbox] div.nsc.radio-display, div.nsc.input[type=radio] div.nsc.radio-display {
+  width: 100%;
+  height: 100%;
+  min-width: 0.8rem;
+  min-height: 0.8rem;
+  margin: 0.25rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+div.nsc.input[type=checkbox] div.nsc.radio-display.checked, div.nsc.input[type=radio] div.nsc.radio-display.checked {
+  opacity: 1;
+}
+div.nsc.input[type=number] {
+  gap: 0;
+}
+div.nsc.input[type=number] input {
+  -moz-appearance: textfield;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  max-width: 5rem;
+}
+div.nsc.input[type=number] input::-webkit-outer-spin-button, div.nsc.input[type=number] input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+  margin: 0;
+}
+div.nsc.input[type=number] button.nsc.button {
+  margin: 0;
+  border-radius: 0;
+  align-self: stretch;
+}
+div.nsc.input[type=number] button.nsc.button svg {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+}
+div.nsc.input input, div.nsc.input[type=number] div.nsc.number-display {
   border: none;
   background: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem;
   outline: none;
   transition: all 0.15s ease-in-out;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -2008,9 +2190,9 @@ div.nsc.input input {
   font-weight: 500;
   color: inherit;
 }
-div.nsc.input input::placeholder, div.nsc.input input::-webkit-calendar-picker-indicator {
+div.nsc.input input::placeholder, div.nsc.input input::-webkit-calendar-picker-indicator, div.nsc.input[type=number] div.nsc.number-display::placeholder, div.nsc.input[type=number] div.nsc.number-display::-webkit-calendar-picker-indicator {
   color: #ebebeb;
 }
-div.nsc.input input[type=button], div.nsc.input input[type=checkbox] {
+div.nsc.input input[type=button], div.nsc.input input[type=checkbox], div.nsc.input[type=number] div.nsc.number-display[type=button], div.nsc.input[type=number] div.nsc.number-display[type=checkbox] {
   display: none;
 }/*# sourceMappingURL=styles.css.map */

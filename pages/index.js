@@ -9,6 +9,8 @@ import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 
 export default function Home() {
 	const [checkbox, setCheckbox] = useState(false);
+	const [radio, setRadio] = useState(false);
+
 	const [passwordHidden, setPasswordHidden] = useState(true);
 	const toggle = () => {
 		setCheckbox(!checkbox);
@@ -34,13 +36,29 @@ export default function Home() {
 			/>
 			<Input color="red" type="email" />
 			<Input
-				color="red"
+				emphasis="primary"
 				type="password"
 				visible={!passwordHidden}
 				onToggle={() => {
 					setPasswordHidden(!passwordHidden);
 					console.log("toggled if password was hidden");
 				}}
+			/>
+			<Input
+				type="radio"
+				color="red"
+				checked={radio}
+				onToggle={() => setRadio(true)}
+			/>
+			<Input color="yellow" type="url" />
+			<Input color="red" type="tel" />
+			<Input
+				color="purple"
+				type="number"
+				placeholder={"0 eee"}
+				min={0}
+				max={500000000000000000}
+				step={1}
 			/>
 
 			<br />
@@ -56,15 +74,11 @@ export default function Home() {
 			<Input color="yellow" type="hidden" />
 			<Input color="green" type="image" />
 			<Input color="blue" type="month" />
-			<Input color="purple" type="number" />
-			<Input color="orange" type="radio" />
 			<Input color="yellow" type="range" />
 			<Input color="green" type="reset" />
 			<Input color="blue" type="search" />
 			<Input color="purple" type="submit" />
-			<Input color="red" type="tel" />
 			<Input color="orange" type="time" />
-			<Input color="yellow" type="url" />
 			<Input color="green" type="week" />
 		</div>
 	);
