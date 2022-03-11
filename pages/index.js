@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-	Button,
-	Input,
-	Pagination,
-	ProgressBar,
-} from "../nextjs-simple-components";
+import { Button, Input, Pagination, ProgressBar } from "../proton.js";
 import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 
 export default function Home() {

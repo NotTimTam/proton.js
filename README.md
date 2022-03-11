@@ -1,12 +1,12 @@
-# nextjs-simple-components
+# proton.js
 
 A small, easy-to-learn UI library for Next.js/React.js
 
-NSC is not a full UI library, instead it is a collection of highly modifiable components for you to drop into existing projects.
+Proton is not a full UI library, instead it is a collection of highly modifiable components for you to drop into existing projects.
 
 All icons used in this library are from [bootstrap-icons](https://icons.getbootstrap.com/), but it is not required as a dependency.
 
-NSC works well with these libraries:
+Proton works well with these libraries:
 
 -   [bootstrap-icons](https://icons.getbootstrap.com/) `npm i bootstrap-icons`
 -   [react-icons](https://react-icons.github.io/react-icons/) `npm i react-icons`
@@ -20,7 +20,7 @@ NSC works well with these libraries:
 All components can be imported with:
 
 ```jsx
-import { ComponentName } from "nextjs-simple-components";
+import { ComponentName } from "proton.js";
 ```
 
 ## Applying Modifications
@@ -79,7 +79,7 @@ Certain components can have emphasis applied to them. This can be:
 The button component has a variety of animations and styles for you to pick from.
 
 ```jsx
-import { Button } from "nextjs-simple-components";
+import { Button } from "proton.js";
 
 return <Button>Text/Children Here</Button>;
 ```
@@ -112,7 +112,7 @@ return <Button>Text/Children Here</Button>;
 The button group holds an unlimited number of `<Button/>`s in a stylish and compact way.
 
 ```jsx
-import { Button } from "nextjs-simple-components";
+import { Button } from "proton.js";
 
 return (
 	<Button.Group>
@@ -136,7 +136,7 @@ return (
 A button label goes inside of a button and can be used for icons, to indicate data, or whatever else you what emphasis applied to.
 
 ```jsx
-import { Button } from "nextjs-simple-components";
+import { Button } from "proton.js";
 
 return (
 	<Button>
@@ -159,7 +159,7 @@ return (
 The progress bar allows you to display a percentage value with any text over it.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100}>
@@ -194,7 +194,7 @@ return (
 The spacer goes inside of a progress bar and takes up as much space as it can.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100}>
@@ -218,7 +218,7 @@ return (
 The label is a box that should contain any inner content for the bar, excluding spacers. You can have multiple spacers and they will stay in the bar properly spaced. Please keep in mind that the progress bar should maintain a horizontal line and won't wrap properly.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100}>
@@ -233,7 +233,7 @@ return (
 -   If one label contains a dot component, _all of them should_.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100}>
@@ -253,7 +253,7 @@ return (
 -   All dots should _be the first element in the label_.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100}>
@@ -276,7 +276,7 @@ return (
 -   If a label contains text and dot components, and the progress bar has a backline property, then _all of the labels in the bar should contain text to have the dots line up properly_.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100}>
@@ -303,7 +303,7 @@ return (
 Dots are nice indicators of "steps" inside of a progress bar. They should be contained within labels. They can also be displayed alongside text, but the styling rules described in [the label rules](#labelRules) must be followed.
 
 ```jsx
-import { ProgressBar } from "nextjs-simple-components";
+import { ProgressBar } from "proton.js";
 
 return (
 	<ProgressBar value={50} min={0} max={100} backline>
@@ -333,7 +333,7 @@ The pagination component is a simple yet effective button group for pagination.
 The paginator does not store page data or load it, it simply allows users to change their page number in an intuitive way, that the developer can use to modify the content of their pages.
 
 ```jsx
-import { Pagination } from "nextjs-simple-components";
+import { Pagination } from "proton.js";
 import { useState } from "react";
 
 // An example of a fully functional paginator.

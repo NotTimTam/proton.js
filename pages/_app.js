@@ -1,4 +1,4 @@
-import "../nextjs-simple-components/styles.min.css";
+import "../proton.js/styles.min.css";
 
 function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />;
