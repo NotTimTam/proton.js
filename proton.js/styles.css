@@ -5,6 +5,14 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
 }
+.proton h1,
+.proton h2,
+.proton h3,
+.proton h4,
+.proton h5,
+.proton h6 {
+  margin: 0;
+}
 
 button.proton.button {
   border: none;
@@ -1238,8 +1246,10 @@ button.proton.button[loading] div.proton.loading {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100px;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -1597,4 +1607,306 @@ div.proton.progress-bar div.proton.overlay[backline]::after {
   position: absolute;
   top: 0.875rem;
   left: 2.5%;
+}
+
+div.proton.card {
+  transition: all 0.15s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  border: 0.15rem solid #ebebeb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+div.proton.card div.proton.children > :first-child {
+  padding-top: 0.5rem;
+}
+div.proton.card div.proton.children > :last-child {
+  padding-bottom: 0.5rem;
+}
+div.proton.card div.proton.children > :last-child.proton.card-content {
+  padding-bottom: 1rem;
+}
+div.proton.card[focusable]:focus {
+  outline: 1px solid #90ec90;
+}
+div.proton.card div.proton.card-header {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+div.proton.card div.proton.card-header h1,
+div.proton.card div.proton.card-header h2,
+div.proton.card div.proton.card-header h3,
+div.proton.card div.proton.card-header h4,
+div.proton.card div.proton.card-header h5,
+div.proton.card div.proton.card-header h6,
+div.proton.card div.proton.card-header p {
+  margin: 0;
+}
+div.proton.card div.proton.card-content {
+  width: 100%;
+  padding: 1rem;
+}
+div.proton.card div.proton.card-content[flex] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+div.proton.card div.proton.card-image {
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.proton.card div.proton.card-image img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+div.proton.card[hovereffect]:hover {
+  box-shadow: 0px 4px 16px #0000001f;
+}
+div.proton.card[dropshadow] {
+  box-shadow: 0px 4px 16px #0000001f;
+}
+div.proton.card[dropshadow][hovereffect]:hover {
+  box-shadow: 0px 4px 16px #0000003f;
+}
+div.proton.card[square] {
+  border-radius: 0;
+}
+div.proton.card[rounder] {
+  border-radius: 1rem;
+}
+div.proton.card[noborder] {
+  border: none;
+}
+div.proton.card[disabled] {
+  opacity: 50%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+div.proton.card[loading] {
+  position: relative;
+  pointer-events: none;
+  opacity: 100%;
+}
+div.proton.card[loading] div.proton.children {
+  opacity: 0;
+}
+div.proton.card[loading] div.proton.loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  visibility: visible;
+}
+div.proton.card[loading] div.proton.loading div.proton.dot:nth-child(3n+1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+div.proton.card[loading] div.proton.loading div.proton.dot:nth-child(3n+2) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+div.proton.card[loading] div.proton.loading div.proton.dot:nth-child(3n+3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+div.proton.card[loading] div.proton.loading div.proton.dot {
+  width: 10%;
+  height: 0;
+  padding-bottom: 10%;
+  border-radius: 50%;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  transform: translateY(-0.25rem);
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(-0.25rem);
+  }
+  50% {
+    transform: translateY(0.25rem);
+  }
+  100% {
+    transform: translateY(-0.25rem);
+  }
+}
+div.proton.card[emphasis=primary] {
+  border-color: #2f2f97;
+}
+div.proton.card[emphasis=primary] div.proton.card-header {
+  color: #2f2f97;
+}
+div.proton.card[emphasis=primary][loading] div.proton.loading div.proton.dot {
+  background: #2f2f97;
+}
+div.proton.card[emphasis=primary-text] {
+  border-color: white;
+}
+div.proton.card[emphasis=primary-text] div.proton.card-header {
+  color: white;
+}
+div.proton.card[emphasis=primary-text][loading] div.proton.loading div.proton.dot {
+  background: white;
+}
+div.proton.card[emphasis=secondary] {
+  border-color: #a1a2a7;
+}
+div.proton.card[emphasis=secondary] div.proton.card-header {
+  color: #a1a2a7;
+}
+div.proton.card[emphasis=secondary][loading] div.proton.loading div.proton.dot {
+  background: #a1a2a7;
+}
+div.proton.card[emphasis=secondary-text] {
+  border-color: white;
+}
+div.proton.card[emphasis=secondary-text] div.proton.card-header {
+  color: white;
+}
+div.proton.card[emphasis=secondary-text][loading] div.proton.loading div.proton.dot {
+  background: white;
+}
+div.proton.card[emphasis=default] {
+  border-color: #ebebeb;
+}
+div.proton.card[emphasis=default] div.proton.card-header {
+  color: #ebebeb;
+}
+div.proton.card[emphasis=default][loading] div.proton.loading div.proton.dot {
+  background: #ebebeb;
+}
+div.proton.card[emphasis=default-text] {
+  border-color: black;
+}
+div.proton.card[emphasis=default-text] div.proton.card-header {
+  color: black;
+}
+div.proton.card[emphasis=default-text][loading] div.proton.loading div.proton.dot {
+  background: black;
+}
+div.proton.card[color=red] {
+  border-color: #ed5564;
+}
+div.proton.card[color=red] div.proton.card-header {
+  color: #ed5564;
+}
+div.proton.card[color=red][loading] div.proton.loading div.proton.dot {
+  background: #ed5564;
+}
+div.proton.card[color=orange] {
+  border-color: #f1b037;
+}
+div.proton.card[color=orange] div.proton.card-header {
+  color: #f1b037;
+}
+div.proton.card[color=orange][loading] div.proton.loading div.proton.dot {
+  background: #f1b037;
+}
+div.proton.card[color=yellow] {
+  border-color: #ffce54;
+}
+div.proton.card[color=yellow] div.proton.card-header {
+  color: #ffce54;
+}
+div.proton.card[color=yellow][loading] div.proton.loading div.proton.dot {
+  background: #ffce54;
+}
+div.proton.card[color=green] {
+  border-color: #a0d568;
+}
+div.proton.card[color=green] div.proton.card-header {
+  color: #a0d568;
+}
+div.proton.card[color=green][loading] div.proton.loading div.proton.dot {
+  background: #a0d568;
+}
+div.proton.card[color=blue] {
+  border-color: #4fc1e8;
+}
+div.proton.card[color=blue] div.proton.card-header {
+  color: #4fc1e8;
+}
+div.proton.card[color=blue][loading] div.proton.loading div.proton.dot {
+  background: #4fc1e8;
+}
+div.proton.card[color=purple] {
+  border-color: #ac92eb;
+}
+div.proton.card[color=purple] div.proton.card-header {
+  color: #ac92eb;
+}
+div.proton.card[color=purple][loading] div.proton.loading div.proton.dot {
+  background: #ac92eb;
+}
+div.proton.card[color=warning] {
+  border-color: #f8de6b;
+}
+div.proton.card[color=warning] div.proton.card-header {
+  color: #f8de6b;
+}
+div.proton.card[color=warning][loading] div.proton.loading div.proton.dot {
+  background: #f8de6b;
+}
+div.proton.card[color=error] {
+  border-color: #eb6383;
+}
+div.proton.card[color=error] div.proton.card-header {
+  color: #eb6383;
+}
+div.proton.card[color=error][loading] div.proton.loading div.proton.dot {
+  background: #eb6383;
+}
+div.proton.card[color=default] {
+  border-color: #ebebeb;
+}
+div.proton.card[color=default] div.proton.card-header {
+  color: #ebebeb;
+}
+div.proton.card[color=default][loading] div.proton.loading div.proton.dot {
+  background: #ebebeb;
+}
+div.proton.card[color=success] {
+  border-color: #90ec90;
+}
+div.proton.card[color=success] div.proton.card-header {
+  color: #90ec90;
+}
+div.proton.card[color=success][loading] div.proton.loading div.proton.dot {
+  background: #90ec90;
+}
+
+div.proton.card-group {
+  transition: all 0.15s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+div.proton.card-group div.proton.card {
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */

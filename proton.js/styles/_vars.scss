@@ -32,10 +32,10 @@ $margin: 0.5rem;
 $focus: 1px solid map-get($colors, "success");
 
 // Box Shadow
-$light-shadow-color: #0000003b;
-$dark-shadow-color: #00000079;
-$light-shadow: 0px 5px 5px $light-shadow-color;
-$dark-shadow: 0px 5px 5px $dark-shadow-color;
+$light-shadow-color: #0000001f;
+$dark-shadow-color: #0000003f;
+$light-shadow: 0px 4px 16px $light-shadow-color;
+$dark-shadow: 0px 4px 16px $dark-shadow-color;
 
 // Border
 $border-width: 0.15rem;
