@@ -1,6 +1,6 @@
 {
-	"name": "@nottimtam/proton",
-	"version": "1.0.1",
+	"name": "@nottimtam/proton.js",
+	"version": "1.0.2",
 	"description": "A collection of nextjs components that are beautifully designed and easy to use.",
 	"main": "index.js",
 	"scripts": {},
