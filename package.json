@@ -1,5 +1,5 @@
 {
-	"name": "@nottimtam/proton.js",
+	"name": "proton.js",
 	"version": "1.0.7",
 	"description": "A collection of nextjs components that are beautifully designed and easy to use.",
 	"main": "index.js",
