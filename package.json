@@ -1,6 +1,6 @@
 {
-	"name": "@NotTimTam/proton.js",
-	"version": "1.0.0",
+	"name": "@nottimtam/proton",
+	"version": "1.0.1",
 	"description": "A collection of nextjs components that are beautifully designed and easy to use.",
 	"main": "index.js",
 	"scripts": {},
@@ -14,9 +14,7 @@
 		"components",
 		"styled"
 	],
-	"author": {
-		"name": "NotTimTam"
-	},
+	"author": "NotTimTam",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/NotTimTam/proton.js/issues"
