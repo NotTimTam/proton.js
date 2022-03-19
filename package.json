@@ -1,19 +1,19 @@
 {
 	"name": "@nottimtam/proton.js",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"description": "A collection of nextjs components that are beautifully designed and easy to use.",
 	"main": "index.js",
 	"scripts": {},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/NotTimTam/proton.js.git"
-	},
+	"repository": "git://github.com/NotTimTam/proton.js.git",
 	"keywords": [
 		"nextjs",
 		"react",
 		"components",
 		"styled"
 	],
+	"dependencies": {
+		"react": "17.0.2"
+	},
 	"author": "NotTimTam",
 	"license": "ISC",
 	"bugs": {
